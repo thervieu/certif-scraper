@@ -34,8 +34,12 @@ def list_links(args):
                     
 
             href_nb += 1
-        if next_exists == False:
-            break
+            next_exists = False
+            for a in soup.find_all('a', href=True, class_="btn btn-sm"):
+                if "Next" in a.contents[0]
+                    next_exists = True
+            if next_exists == False:
+                break
         print(f'############### PAGE {page_nb} DONE #################')
         page_nb += 1
 
