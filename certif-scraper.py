@@ -2,6 +2,41 @@ import os, sys
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import defaultdict
+
+
+# Function to parse a single page
+def parse_page(page_nb):
+    try:
+        request = requests.get(f'https://www.examtopics.com/discussions/{csp}/{page_nb}/')
+        if request.status_code == 404:
+            return  # Exit if the page doesn't exist
+        
+        soup = BeautifulSoup(request.text, 'html.parser')
+
+        for a in soup.find_all('a', href=True, class_="discussion-link"):
+
+            # skip uninteresting certifs
+            if csp == "microsoft" and "AZ-" not in a.contents[0]:
+                continue
+            # same for AWS
+
+            cert_name = ""
+            if csp == "microsoft:
+                cert_name = a.contents[0].split("Exam ")[1].split(" topic")[0]
+            if csp == "amazon":
+                split_on_topic = a.contents[0].split(" topic")[0]
+                cert_name = split_on_topic.split(" ", len(split_on_topic)-1)
+                print(f'amazon: certification name: {cert_name}')
+
+            with lock:
+                if cert_name not in links_map:
+                    links_map[cert_name] = [a['href']]
+                else:
+                    links_map[cert_name].append(a['href'])
+    except Exception as e:
+        print(f"Error processing page {page_number}: {e}")
 
 def list_links(args):
     href_nb = 0
@@ -12,32 +47,11 @@ def list_links(args):
     else:
         total_pages = 506
     links_map = {}
-    for page_nb in list(range(1, total_pages)):
-        page = requests.get(f'https://www.examtopics.com/discussions/{csp}/{page_nb}/')
-        soup = BeautifulSoup(page.text, 'html.parser')
-
-        for a in soup.find_all('a', href=True, class_="discussion-link"):
-
-            # skip uninteresting certifs
-            if csp == "microsoft" and "AZ-" not in a.contents[0]:
-                continue
-
-            cert_name = ""
-            if csp == "microsoft:
-                cert_name = a.contents[0].split("Exam ")[1].split(" topic")[0]
-            if csp == "amazon":
-                split_on_topic = a.contents[0].split(" topic")[0]
-                cert_name = split_on_topic.split(" ", len(split_on_topic)-1)
-                print(f'amazon: certification name: {cert_name}')
-
-            if cert_name not in links_map:
-                links_map[cert_name] = [a['href']]
-            else:
-                links_map[cert_name].append(a['href'])
-                    
-
-            href_nb += 1
-        print(f'############### PAGE {page_nb} DONE #################')
+    with ThreadPoolExecutor(max_workers=max_threads) as executor:
+        futures = [executor.submit(parse_page, i) for i in range(1, total_pages)]
+        
+        for future in as_completed(futures):
+            future.result()
 
     current_day = datetime.now().day
     current_month = datetime.now().month
@@ -64,4 +78,7 @@ if __name__=="__main__":
     if args[0] not in ["microsoft", "amazon"]:
         print("argument should be microsoft or amazon")
         exit()
+
+    links_map = global defaultdict(list)
+    lock = global threading.Lock()
     list_links(args)
