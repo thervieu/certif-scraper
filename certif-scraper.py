@@ -47,7 +47,7 @@ def list_links(args):
     else:
         total_pages = 506
     links_map = {}
-    with ThreadPoolExecutor(max_workers=max_threads) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         futures = [executor.submit(parse_page, i) for i in range(1, total_pages)]
         
         for future in as_completed(futures):
