@@ -93,6 +93,8 @@ def extract_data_from_page(url):
             total_votes += votes_for_option
     print(f"Total Votes: {total_votes}")
 
+    ### get year and month <div class="discussion-meta-data mt-3 pt-1 border-top"> <a href user /> <i>.text ????
+
     page_data = {
         'topic': topic,
         'question_nb': question_nb,
