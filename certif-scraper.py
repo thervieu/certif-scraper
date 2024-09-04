@@ -46,12 +46,13 @@ def list_links(args):
     current_day = datetime.now().day
     current_month = datetime.now().month
     current_year = datetime.now().year
-    os.mkdir(f'{csp}_links_{current_day}_{current_month}')
+    os.mkdir(f'{csp}_links')
+    os.mkdir(f'{csp}_links_{current_year}_{current_month}_{current_day}')
 
     print(f'total Azure questions found : {href_nb}')
     for key in links_map:
         print(key)
-        with open(f'./{csp}_links/{key}.txt', mode='wt', encoding='utf-8') as myfile:
+        with open(f'./{csp}_links_{current_year}_{current_month}_{current_day}/{key}.txt', mode='wt', encoding='utf-8') as myfile:
             myfile.write('\n'.join(str(link) for link in links_map[key]))
             myfile.write('\n')
 
