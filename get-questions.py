@@ -11,7 +11,7 @@ def extract_data_from_page(url):
     h1_no_class = soup.find('h1', class_=False)
     title = h1_no_class.text.strip()
     # get topic and question_nb from title
-    # get question <p class="card-text">, get images and dl them
+    # get question <p class="card-text">.text, get text and images and dl them
     # get question type : <div class="question-choices-container">, <li class="multi-choice-item correct-hidden">
     # must count # of correct_hidden if single of multiple choice
     # <span class="multi-choice-letter"> for Yes/No
