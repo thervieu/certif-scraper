@@ -4,24 +4,41 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 def extract_data_from_page(url):
-    # Send a GET request to the page
     response = requests.get(url)
-    
-    # Parse the page content
     soup = BeautifulSoup(response.content, 'html.parser')
     
     # Extract information (replace these examples with your actual data extraction logic)
-    title = soup.find('h1').text.strip()  # Example: Get the title
-    description = soup.find('meta', {'name': 'description'})['content'].strip()  # Example: Get meta description
-    price = soup.find('span', {'class': 'price'}).text.strip()  # Example: Get price
-    # Add more fields as needed
+    h1_no_class = soup.find('h1', class_=False)
+    title = h1_no_class.text.strip()
+    # get topic and question_nb from title
+    # get question <p class="card-text">, get images and dl them
+    # get question type : <div class="question-choices-container">, <li class="multi-choice-item correct-hidden">
+    # must count # of correct_hidden if single of multiple choice
+    # <span class="multi-choice-letter"> for Yes/No
+    # no div class for click
     
-    # Create a dictionary to store the extracted information
+    # get choices : loop li.text, or last image of p.text
+    
+    # get site answer
+    # loop <li class="multi-choice-item correct-hidden">
+    # no div class for click  ; get <span class="correct-answer"> <img src="">
+
+    # get most voted
+    # index of li where <span class="badge badge-success most-voted-answer-badge"> is next ; if multiple use pipe ; store as string
+    # if click, get link of discussion
+
+    # get vote nb
+    # div class="voting-summary..."> ->  <div class="vote-bar progress-bar>.text .data-original-title.split(" ")[0].toInt() ; produit en croix entre % pr trouver le nombre de votes
+    
     page_data = {
-        'title': title,
-        'description': description,
-        'price': price,
-        # Add more key-value pairs here for other extracted data
+        'topic': topic,
+        'question_nb': question_nb,
+        'question': question,
+        'question_type': string, # single choice, multiple choice, click
+        'choices': string_with_pipe_seperator,
+        'site_answer': nb_or_list,
+        'vote_answer':
+        'vote_nb:
     }
     
     return page_data
