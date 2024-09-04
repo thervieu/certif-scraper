@@ -47,7 +47,7 @@ def list_links(args):
     print(f'total Azure questions found : {href_nb}')
     for key in links_map:
         print(key)
-        with open(f'./{csp}_links/{current_year}_{current_month}_{current_day}/{key}.txt', mode='wt', encoding='utf-8') as myfile:
+        with open(f'./{csp}_links/{key}.txt', mode='wt', encoding='utf-8') as myfile:
             myfile.write('\n'.join(str(link) for link in links_map[key]))
             myfile.write('\n')
 
