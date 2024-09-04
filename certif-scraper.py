@@ -15,7 +15,7 @@ def list_links(args):
 
         for a in soup.find_all('a', href=True, class_="discussion-link"):
 
-            # skip uninteresting questions
+            # skip uninteresting certifs
             if csp == "microsoft" and "AZ-" not in a.contents[0]:
                 continue
 
@@ -50,9 +50,6 @@ def list_links(args):
             myfile.write('\n'.join(str(link) for link in links_map[key]))
             myfile.write('\n')
 
-
-def get_questions(args):
-    pass
 
 if __name__=="__main__":
     # check args
