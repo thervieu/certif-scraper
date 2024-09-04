@@ -4,12 +4,15 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 def list_links(args):
-    next_exists = True
-    page_nb = 1
     href_nb = 0
     csp = args[0]
+    total_pages = 0
+    if csp == "microsoft:
+        total_pages = 1279
+    else:
+        total_pages = 506
     links_map = {}
-    while True:
+    for page_nb in list(range(1, total_pages)):
         page = requests.get(f'https://www.examtopics.com/discussions/{csp}/{page_nb}/')
         soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -34,14 +37,7 @@ def list_links(args):
                     
 
             href_nb += 1
-            next_exists = False
-            for a in soup.find_all('a', href=True, class_="btn btn-sm"):
-                if "Next" in a.contents[0]
-                    next_exists = True
-            if next_exists == False:
-                break
         print(f'############### PAGE {page_nb} DONE #################')
-        page_nb += 1
 
     current_day = datetime.now().day
     current_month = datetime.now().month
