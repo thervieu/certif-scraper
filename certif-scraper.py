@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 def list_links(args):
-    print("list_links")
     next_exists = True
     page_nb = 1
     href_nb = 0
@@ -15,14 +14,24 @@ def list_links(args):
         soup = BeautifulSoup(page.text, 'html.parser')
 
         for a in soup.find_all('a', href=True, class_="discussion-link"):
-            if "AZ-" not in a.contents[0]:
+
+            # skip uninteresting questions
+            if csp == "microsoft" and "AZ-" not in a.contents[0]:
                 continue
 
-            cert_name = a.contents[0].split("Exam ")[1].split(" topic")[0]
+            cert_name = ""
+            if csp == "microsoft:
+                cert_name = a.contents[0].split("Exam ")[1].split(" topic")[0]
+            if csp == "amazon":
+                split_on_topic = a.contents[0].split(" topic")[0]
+                cert_name = split_on_topic.split(" ", len(split_on_topic)-1)
+                print(f'amazon: certification name: {cert_name}')
+
             if cert_name not in links_map:
                 links_map[cert_name] = [a['href']]
             else:
                 links_map[cert_name].append(a['href'])
+                    
 
             href_nb += 1
         if next_exists == False:
@@ -34,7 +43,7 @@ def list_links(args):
     current_month = datetime.now().month
     os.mkdir(f'{csp}_links_{current_day}_{current_month}')
 
-    print(f'href_nb = {href_nb}')
+    print(f'total Azure questions found : {href_nb}')
     for key in links_map:
         print(key)
         with open(f'./{csp}_links_{current_day}_{current_month}/{key}.txt', mode='wt', encoding='utf-8') as myfile:
@@ -47,22 +56,13 @@ def get_questions(args):
 
 if __name__=="__main__":
     # check args
-    if len(sys.argv) < 4:
+    if len(sys.argv) < 2:
         print("not enough args")
         exit()
-    # get just the links
-    # or the questions (but questions assumed that you already searched the links)
+
     args = sys.argv[1:]
 
-    print(args)
     if args[0] not in ["microsoft", "amazon"]:
-        print("first argument should be microsoft or amazon")
+        print("argument should be microsoft or amazon")
         exit()
-    if args[0] == "microsoft" and args[1].startswith("AZ-") is False:
-        print("focus is on AZ certs")
-    if args[2] not in ["list", "get"]:
-        print("wrong third arg, can be list or get")
-    if args[2] == "list":
-        list_links(args[:len(args)-1])
-    elif args[2] == "get":
-        get_questions(args[:len(args)-1])
+    list_links(args)
