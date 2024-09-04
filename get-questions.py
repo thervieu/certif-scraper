@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-def list_links(args):
+def get_questions(args):
     print("list_links")
     next_exists = True
     page_nb = 1
@@ -42,27 +42,18 @@ def list_links(args):
             myfile.write('\n')
 
 
-def get_questions(args):
-    pass
-
 if __name__=="__main__":
     # check args
-    if len(sys.argv) < 4:
+    if len(sys.argv) < 3:
         print("not enough args")
         exit()
     # get just the links
     # or the questions (but questions assumed that you already searched the links)
     args = sys.argv[1:]
 
-    print(args)
     if args[0] not in ["microsoft", "amazon"]:
         print("first argument should be microsoft or amazon")
         exit()
-    if args[0] == "microsoft" and args[1].startswith("AZ-") is False:
-        print("focus is on AZ certs")
-    if args[2] not in ["list", "get"]:
+    if args[1] not in ["list", "get"]:
         print("wrong third arg, can be list or get")
-    if args[2] == "list":
-        list_links(args[:len(args)-1])
-    elif args[2] == "get":
-        get_questions(args[:len(args)-1])
+    get_questions(args[:len(args)-1])
