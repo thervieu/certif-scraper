@@ -3,15 +3,41 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+def extract_data_from_page(url):
+    # Send a GET request to the page
+    response = requests.get(url)
+    
+    # Parse the page content
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    # Extract information (replace these examples with your actual data extraction logic)
+    title = soup.find('h1').text.strip()  # Example: Get the title
+    description = soup.find('meta', {'name': 'description'})['content'].strip()  # Example: Get meta description
+    price = soup.find('span', {'class': 'price'}).text.strip()  # Example: Get price
+    # Add more fields as needed
+    
+    # Create a dictionary to store the extracted information
+    page_data = {
+        'title': title,
+        'description': description,
+        'price': price,
+        # Add more key-value pairs here for other extracted data
+    }
+    
+    return page_data
+    pass
+
 def get_questions(args):
-    print("list_links")
-    next_exists = True
-    page_nb = 1
-    href_nb = 0
+    print("get_questions")
+    all_questions = []
     csp = args[0]
-    links_map = {}
-    while True:
-        page = requests.get(f'https://www.examtopics.com/discussions/{csp}/{page_nb}/')
+    cert_name = args[1]
+    questions_map = list()
+    num_questions = sum(1 for _ in open(f'./{csp}_links/{cert_name}.txt', "r"))
+    print(f'total questions found for {cert_name} : {num_questions}')
+    file = open(f'./{csp}_links/{cert_name}.txt', "r")
+    for question_path in file:
+        page = requests.get(f'https://www.examtopics.com{question_path}')
         soup = BeautifulSoup(page.text, 'html.parser')
 
         for a in soup.find_all('a', href=True, class_="discussion-link"):
@@ -47,13 +73,15 @@ if __name__=="__main__":
     if len(sys.argv) < 3:
         print("not enough args")
         exit()
-    # get just the links
-    # or the questions (but questions assumed that you already searched the links)
+        
     args = sys.argv[1:]
 
+    certif_map = map({
+        "microsoft": ["AZ-305", "AZ-104", "AZ-140"],
+    })
     if args[0] not in ["microsoft", "amazon"]:
         print("first argument should be microsoft or amazon")
         exit()
-    if args[1] not in ["list", "get"]:
-        print("wrong third arg, can be list or get")
+    if args[1] not in certif_map[args[0]:
+        print("wrong certification, check map in the code")
     get_questions(args[:len(args)-1])
