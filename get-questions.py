@@ -1,8 +1,9 @@
 import os
+import re
 import sys
-from requests_html import HTMLSession
 import json
-import time
+import string
+from bs4 import BeautifulSoup
 
 # Function to log in and maintain the session
 def login_or_set_session(session, login_url=None, credentials=None, sessionid=None):
@@ -28,139 +29,111 @@ def login_or_set_session(session, login_url=None, credentials=None, sessionid=No
 
 
 # Function to extract question data
-def extract_question(session, i, max_retries=3, timeout_duration=8):
-    retries = 0  # Initialize retry count
+def extract_question(filename):
+    try:
+        # Open and read the local HTML file
+        with open(filename, 'r', encoding='utf-8') as file:
+            content = file.read()
 
-    while retries < max_retries:
-        try:
-            response = session.get(f'https://www.examtopics.com/exams/amazon/aws-certified-developer-associate-dva-c02/view/{i}', timeout=timeout_duration)
-            print(f'https://www.examtopics.com/exams/amazon/aws-certified-developer-associate-dva-c02/view/{i}')
-            
-            # Check for valid response status
-            if response.status_code != 200:
-                print(f'Error {response.status_code}')
-                return  # Exit if the page doesn't exist or returns an error
+        # Parse the file with BeautifulSoup
+        soup = BeautifulSoup(content, 'html.parser')
 
-            response.html.render(timeout=timeout_duration)
-            
-            soup = response.html  # Use the HTML object from requests_html
+        # Find all <div class="card exam-question-card">
+        question_cards = soup.find_all('div', class_='card exam-question-card')
+        if not question_cards:
+            print("No question cards found in the file.")
+            return
 
-            # Find all <div class="card exam-question-card"> elements
-            question_cards = soup.find('div.card.exam-question-card')
-            if not question_cards:
-                print("No question cards found on the page.")
-                return
+        # Loop over each question card
+        for question_card in question_cards:
 
-            # Loop over each question card
-            for _ in question_cards:
-            
-                # Extract the question text within each card
-                h1_no_class = soup.find('h1', first=True)
-                if not h1_no_class:
-                    print("No title found!")
-                    return
+            # Get question text
+            question_text = question_card.find('p', class_='card-text').text.strip()
+            # Regex pattern to find any character followed by an uppercase letter
+            pattern = r'(\.)([A-Z])'
 
-                title = h1_no_class.text.strip()
-                print('title', title)
+            # Replacement pattern to insert two newlines before the uppercase letter
+            replacement = r'.<br><br>\2'
 
-                # Get question text
-                question_text = soup.find('p.card-text', first=True).text.strip()
-                print(f"Question: {question_text}")
+            # Perform the substitution
+            question_text = re.sub(pattern, replacement, question_text)
+            print(f"Question: {question_text}")
 
-                # Determine question type
-                question_type_container = soup.find('div.question-choices-container', first=True)
-                if not question_type_container:
-                    print("No question type container found!")
-                    return
+            # Determine question type by looking for multiple correct answers
+            question_type_container = question_card.find('div', class_='question-choices-container')
+            if not question_type_container:
+                print("No question type container found for this question!")
+                continue
 
-                correct_hidden_items = question_type_container.find('li.multi-choice-item.correct-hidden')
-                question_type = 'multiple' if len(correct_hidden_items) > 1 else 'single'
-                print(f"Question Type: {question_type}")
+            correct_hidden_items = question_type_container.find_all('li', class_='multi-choice-item correct-hidden')
+            question_type = 'multiple' if len(correct_hidden_items) > 1 else 'single'
+            print(f"Question Type: {question_type}")
 
-                # Get choices
-                choices = [li.text.strip() for li in question_type_container.find('li')]
-                print(f"Choices: {choices}")
+            # Get all choices
+            choices = [li.text.strip() for li in question_type_container.find_all('li')]
+            for i in range(len(choices)):
+                choices[i] = choices[i].replace('\n', '')
+                choices[i] = choices[i].replace('   ', '')
+                choices[i] = choices[i][3:]
+            print(f"Choices: {choices}")
 
-                # Get site-provided correct answers
-                site_answers = [li.text.strip() for li in correct_hidden_items]
-                print(f"Correct Answers: {site_answers}")
+            # Get the correct answers (provided by the site)
+            site_answers = [li.text.strip() for li in correct_hidden_items]
+            for i in range(len(site_answers)):
+                site_answers[i] = site_answers[i].replace('\n', '')
+                site_answers[i] = site_answers[i].replace('   ', '')
+                site_answers[i] = site_answers[i][3:]
+            print(f"Site Answers: {site_answers}")
 
-                # Extract vote and answers
-                votes_and_answers = []
-                vote_progress_bar = soup.find('div.voting-summary', first=True)
-                if vote_progress_bar:
-                    vote_bars = vote_progress_bar.find('div.vote-bar.progress-bar')[:2]
-                    for vote_bar in vote_bars:
-                        data_original_title = vote_bar.attrs.get("data-original-title")
-                        if data_original_title:
-                            # Add data-original-title and the text of the div to the list
-                            votes_and_answers.append((data_original_title, vote_bar.text.strip()))
+            voted_answer = []
+            if question_type == "single":
+                voted_answer = ["single_answer"]
+            else:
+                voted_answer = ["multiple", "answers"]
 
-                print(f"Total Votes: {votes_and_answers}")
+            # Create a dictionary to store question data (optional)
+            question_data = {
+                'question_text': question_text,
+                'question_type': question_type,
+                'choices': choices,
+                'site_answers': site_answers,
+                'voted_answer': voted_answer,
+                'votes_nb': 10,
+            }
 
-                # Create a dictionary to store question data
-                page_data = {
-                    'question_text': question_text,
-                    'question_type': question_type,
-                    'choices': choices,
-                    'site_answers': site_answers,
-                    'vote_and_answers': votes_and_answers
-                }
-                
-                # Append the result to the global question list
-                questions_list.append(page_data)
+            # You can append this dictionary to a list if you want to store all questions
+            questions_list.append(question_data)
 
-                # Exit loop if the request is successful
-            break
-        
-        except Exception as e:
-            retries += 1
-            print(f"Error processing page {i}: {e}, retrying... ({retries}/{max_retries})")
-            time.sleep(2)  # Wait before retrying
-
-            if retries == max_retries:
-                print(f"Failed to process page {i} after {max_retries} retries.")
+    except Exception as e:
+        print(f"Error processing file {filename}: {e}")
 
 
 # Function to handle all questions from the file
-def get_list_questions(session, args):
-    i = 0
-    file = open(f'{args[0]}_links/{args[1]}.txt', "r")
-    
-    for i in range(1, 45, 1):
-        extract_question(session, i)  # Directly extract questions without threading
+def get_list_questions(cert):
+    for file in os.listdir(cert):
+        extract_question(f"{cert}/{file}")
 
     # Output the extracted questions
-    for question in questions_list:
-        print('question_type:', question["question_type"])
-        print('question_text:', question["question_text"])
-        print('choices:', question["choices"])
+    for question in questions_list[0:1]:
+        print(f"Question Type: {question['question_type']}")
+        print(f"Question Text: {question['question_text']}")
+        print('Choices :')
+        for choice in question['choices']:
+            print(f'{choice}')
+        print(f"Site Answers: {question['site_answers']}")
+        print(f"Votes and Answers: {question['voted_answer']}")
 
 
 if __name__ == "__main__":
-        
+    if len(sys.argv) != 2:
+        print("wrong number of args")
+        exit()
+
     global questions_list
     questions_list = []
 
-    # Create a persistent session
-    session = HTMLSession()
-
-    # Example credentials or session ID (modify as needed)
-    login_url = 'https://www.examtopics.com/login/'  # Replace with actual login URL
-    credentials = {
-        'username': 'soflaim',
-        'password': '16031999Zef92.'
-    }
-    sessionid = None  # Set this if you need to use a session ID directly
-
-    # Attempt to log in or set the session
-    if not login_or_set_session(session, login_url=login_url, credentials=credentials, sessionid=sessionid):
-        print("Failed to establish session.")
-        exit()
-
-    # Start scraping questions using the persistent session
-    get_list_questions(session)
+    get_list_questions(sys.argv[1])
     
     # Optionally, save the results to a JSON file
-    with open(f'dva-c02_questions.json', 'w') as outfile:
+    with open(f'{sys.argv[1]}_questions.json', 'w') as outfile:
         json.dump(questions_list, outfile, indent=2)
