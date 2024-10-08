@@ -85,20 +85,12 @@ def extract_question(filename):
                 site_answers[i] = site_answers[i][3:]
             print(f"Site Answers: {site_answers}")
 
-            voted_answer = []
-            if question_type == "single":
-                voted_answer = ["single_answer"]
-            else:
-                voted_answer = ["multiple", "answers"]
-
             # Create a dictionary to store question data (optional)
             question_data = {
                 'question_text': question_text,
                 'question_type': question_type,
                 'choices': choices,
-                'site_answers': site_answers,
-                'voted_answer': voted_answer,
-                'votes_nb': 10,
+                'site_answers': site_answers
             }
 
             # You can append this dictionary to a list if you want to store all questions
@@ -121,7 +113,6 @@ def get_list_questions(cert):
         for choice in question['choices']:
             print(f'{choice}')
         print(f"Site Answers: {question['site_answers']}")
-        print(f"Votes and Answers: {question['voted_answer']}")
 
 
 if __name__ == "__main__":
