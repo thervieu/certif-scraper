@@ -102,7 +102,8 @@ def extract_question(filename):
 
 # Function to handle all questions from the file
 def get_list_questions(cert):
-    for file in os.listdir(cert):
+    file_list = sorted(os.listdir(cert))
+    for file in file_list:
         extract_question(f"{cert}/{file}")
 
     # Output the extracted questions
