@@ -16,5 +16,7 @@ Once this is done you can copy the file to `my-app/public` directory in the http
 
 Finally change the loaded file in the `my-app/src/App.js` with your copied file.
 
+Run the app locally using ``npm run start``.
+
 If everything is done correctly, you will have a exam-like application.
 This was developped in two hours. Revisions will not happen often.
