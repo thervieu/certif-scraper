@@ -30,7 +30,7 @@ def extract_question(filename):
             pattern = r'(\.)([A-Z])'
 
             # Replacement pattern to insert two newlines before the uppercase letter
-            replacement = r'.<br><br>\2'
+            replacement = r'.\n\n\2'
 
             # Perform the substitution
             question_text = re.sub(pattern, replacement, question_text)
