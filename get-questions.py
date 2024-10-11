@@ -2,30 +2,7 @@ import os
 import re
 import sys
 import json
-import string
 from bs4 import BeautifulSoup
-
-# Function to log in and maintain the session
-def login_or_set_session(session, login_url=None, credentials=None, sessionid=None):
-    if login_url and credentials:
-        try:
-            # Perform login if credentials and login URL are provided
-            response = session.post(login_url, data=credentials)
-            if response.status_code == 200:
-                print("Login successful!")
-
-                # Extract session ID from cookies
-                session_id = session.cookies.get('sessionid')  # Replace 'sessionid' with the actual cookie name
-                if session_id:
-                    print(f"Session ID: {session_id}")
-            else:
-                print(f"Login failed with status code {response.status_code}")
-                return False
-        except Exception as e:
-            print(f"Error during login: {e}")
-            return False
-
-    return True
 
 
 # Function to extract question data
@@ -57,7 +34,7 @@ def extract_question(filename):
 
             # Perform the substitution
             question_text = re.sub(pattern, replacement, question_text)
-            print(f"Question: {question_text}")
+            # print(f"Question: {question_text}")
 
             # Determine question type by looking for multiple correct answers
             question_type_container = question_card.find('div', class_='question-choices-container')
@@ -67,7 +44,7 @@ def extract_question(filename):
 
             correct_hidden_items = question_type_container.find_all('li', class_='multi-choice-item correct-hidden')
             question_type = 'multiple' if len(correct_hidden_items) > 1 else 'single'
-            print(f"Question Type: {question_type}")
+            # print(f"Question Type: {question_type}")
 
             # Get all choices
             choices = [li.text.strip() for li in question_type_container.find_all('li')]
@@ -75,7 +52,7 @@ def extract_question(filename):
                 choices[i] = choices[i].replace('\n', '')
                 choices[i] = choices[i].replace('   ', '')
                 choices[i] = choices[i][3:]
-            print(f"Choices: {choices}")
+            # print(f"Choices: {choices}")
 
             # Get the correct answers (provided by the site)
             site_answers = [li.text.strip() for li in correct_hidden_items]
@@ -83,7 +60,7 @@ def extract_question(filename):
                 site_answers[i] = site_answers[i].replace('\n', '')
                 site_answers[i] = site_answers[i].replace('   ', '')
                 site_answers[i] = site_answers[i][3:]
-            print(f"Site Answers: {site_answers}")
+            # print(f"Site Answers: {site_answers}")
 
             # Create a dictionary to store question data (optional)
             question_data = {
@@ -107,13 +84,13 @@ def get_list_questions(cert):
         extract_question(f"{cert}/{file}")
 
     # Output the extracted questions
-    for question in questions_list[0:1]:
-        print(f"Question Type: {question['question_type']}")
-        print(f"Question Text: {question['question_text']}")
-        print('Choices :')
-        for choice in question['choices']:
-            print(f'{choice}')
-        print(f"Site Answers: {question['site_answers']}")
+    # for question in questions_list[0:1]:
+    #     print(f"Question Type: {question['question_type']}")
+    #     print(f"Question Text: {question['question_text']}")
+    #     print('Choices :')
+    #     for choice in question['choices']:
+    #         print(f'{choice}')
+    #     print(f"Site Answers: {question['site_answers']}")
 
 
 if __name__ == "__main__":
