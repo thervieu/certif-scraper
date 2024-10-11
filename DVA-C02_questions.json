@@ -477,13 +477,13 @@
     "question_text": "A company has an Amazon S3 bucket that contains sensitive data. The data must be encrypted in transit and at rest. The company encrypts the data in the S3 bucket by using an AWS Key Management Service (AWS KMS) key. A developer needs to grant several other AWS accounts the permission to use the S3 GetObject operation to retrieve the data from the S3 bucket.<br><br>How can the developer enforce that all requests to retrieve the data provide encryption in transit?",
     "question_type": "single",
     "choices": [
-      "Define a resource-based policy on the S3 bucket to deny access when a request meets the condition \u201caws:SecureTransport\u201d: \u201cfalse\u201d.",
-      "Define a resource-based policy on the S3 bucket to allow access when a request meets the condition \u201caws:SecureTransport\u201d: \u201cfalse\u201d.",
-      "Define a role-based policy on the other accounts' roles to deny access when a request meets the condition of \u201caws:SecureTransport\u201d: \u201cfalse\u201d.",
-      "Define a resource-based policy on the KMS key to deny access when a request meets the condition of \u201caws:SecureTransport\u201d: \u201cfalse\u201d."
+      "Define a resource-based policy on the S3 bucket to deny access when a request meets the condition \"aws:SecureTransport\": \"false\".",
+      "Define a resource-based policy on the S3 bucket to allow access when a request meets the condition \"aws:SecureTransport\": \"false\".",
+      "Define a role-based policy on the other accounts' roles to deny access when a request meets the condition of \"aws:SecureTransport\": \"false\".",
+      "Define a resource-based policy on the KMS key to deny access when a request meets the condition of \"aws:SecureTransport\": \"false\"."
     ],
     "site_answers": [
-      "Define a resource-based policy on the S3 bucket to deny access when a request meets the condition \u201caws:SecureTransport\u201d: \u201cfalse\u201d."
+      "Define a resource-based policy on the S3 bucket to deny access when a request meets the condition \"aws:SecureTransport\": \"false\"."
     ]
   },
   {
@@ -503,7 +503,7 @@
     "question_text": "A company is planning to securely manage one-time fixed license keys in AWS. The company's development team needs to access the license keys in automaton scripts that run in Amazon EC2 instances and in AWS CloudFormation stacks.<br><br>Which solution will meet these requirements MOST cost-effectively?",
     "question_type": "single",
     "choices": [
-      "Amazon S3 with encrypted files prefixed with \u201cconfig\u201d",
+      "Amazon S3 with encrypted files prefixed with \"config\"",
       "AWS Secrets Manager secrets with a tag that is named SecretString",
       "AWS Systems Manager Parameter Store SecureString parameters",
       "CloudFormation NoEcho parameters"
@@ -637,13 +637,13 @@
     "question_text": "A developer has written the following IAM policy to provide access to an Amazon S3 bucket:Which access does the policy allow regarding the s3:GetObject and s3:PutObject actions?",
     "question_type": "single",
     "choices": [
-      "Access on all buckets except the \u201cDOC-EXAMPLE-BUCKET\u201d bucket",
-      "Access on all buckets that start with \u201cDOC-EXAMPLE-BUCKET\u201d except the \u201cDOC-EXAMPLE-BUCKET/secrets\u201d bucket",
-      "Access on all objects in the \u201cDOC-EXAMPLE-BUCKET\u201d bucket along with access to all S3 actions for objects in the \u201cDOC-EXAMPLE-BUCKET\u201d bucket that start with \u201csecrets\u201d",
-      "Access on all objects in the \u201cDOC-EXAMPLE-BUCKET\u201d bucket except on objects that start with \u201csecrets\u201d"
+      "Access on all buckets except the \"DOC-EXAMPLE-BUCKET\" bucket",
+      "Access on all buckets that start with \"DOC-EXAMPLE-BUCKET\" except the \"DOC-EXAMPLE-BUCKET/secrets\" bucket",
+      "Access on all objects in the \"DOC-EXAMPLE-BUCKET\" bucket along with access to all S3 actions for objects in the \"DOC-EXAMPLE-BUCKET\" bucket that start with \"secrets\"",
+      "Access on all objects in the \"DOC-EXAMPLE-BUCKET\" bucket except on objects that start with \"secrets\""
     ],
     "site_answers": [
-      "Access on all objects in the \u201cDOC-EXAMPLE-BUCKET\u201d bucket except on objects that start with \u201csecrets\u201d"
+      "Access on all objects in the \"DOC-EXAMPLE-BUCKET\" bucket except on objects that start with \"secrets\""
     ]
   },
   {
@@ -857,7 +857,7 @@
     ]
   },
   {
-    "question_text": "A company has a critical application on AWS. The application exposes an HTTP API by using Amazon API Gateway. The API is integrated with an AWS Lambda function. The application stores data in an Amazon RDS for MySQL DB instance with 2 virtual CPUs (vCPUs) and 64 GB of RAM.<br><br>Customers have reported that some of the API calls return HTTP 500 Internal Server Error responses. Amazon CloudWatch Logs shows errors for \u201ctoo many connections.\u201d The errors occur during peak usage times that are unpredictable.<br><br>The company needs to make the application resilient. The database cannot be down outside of scheduled maintenance hours.<br><br>Which solution will meet these requirements?",
+    "question_text": "A company has a critical application on AWS. The application exposes an HTTP API by using Amazon API Gateway. The API is integrated with an AWS Lambda function. The application stores data in an Amazon RDS for MySQL DB instance with 2 virtual CPUs (vCPUs) and 64 GB of RAM.<br><br>Customers have reported that some of the API calls return HTTP 500 Internal Server Error responses. Amazon CloudWatch Logs shows errors for \"too many connections.\" The errors occur during peak usage times that are unpredictable.<br><br>The company needs to make the application resilient. The database cannot be down outside of scheduled maintenance hours.<br><br>Which solution will meet these requirements?",
     "question_type": "single",
     "choices": [
       "Decrease the number of vCPUs for the DB instance. Increase the max_connections setting.",
@@ -1342,7 +1342,7 @@
     ]
   },
   {
-    "question_text": "An ecommerce website uses an AWS Lambda function and an Amazon RDS for MySQL database for an order fulfillment service. The service needs to return order confirmation immediately.<br><br>During a marketing campaign that caused an increase in the number of orders, the website's operations team noticed errors for \u201ctoo many connections\u201d from Amazon RDS. However, the RDS DB cluster metrics are healthy. CPU and memory capacity are still available.<br><br>What should a developer do to resolve the errors?",
+    "question_text": "An ecommerce website uses an AWS Lambda function and an Amazon RDS for MySQL database for an order fulfillment service. The service needs to return order confirmation immediately.<br><br>During a marketing campaign that caused an increase in the number of orders, the website's operations team noticed errors for \"too many connections\" from Amazon RDS. However, the RDS DB cluster metrics are healthy. CPU and memory capacity are still available.<br><br>What should a developer do to resolve the errors?",
     "question_type": "single",
     "choices": [
       "Initialize the database connection outside the handler function. Increase the max_user_connections value on the parameter group of the DB cluster. Restart the DB cluster.",
@@ -1957,14 +1957,14 @@
     "question_type": "multiple",
     "choices": [
       "Use AWS KMS to encrypt traffic between CloudFront and the web application.",
-      "Set the Origin Protocol Policy to \u201cHTTPS Only\u201d.",
+      "Set the Origin Protocol Policy to \"HTTPS Only\".",
       "Set the Origin\u2019s HTTP Port to 443.",
-      "Set the Viewer Protocol Policy to \u201cHTTPS Only\u201d or \u201cRedirect HTTP to HTTPS\u201d.",
+      "Set the Viewer Protocol Policy to \"HTTPS Only\" or \"Redirect HTTP to HTTPS\".",
       "Enable the CloudFront option Restrict Viewer Access."
     ],
     "site_answers": [
-      "Set the Origin Protocol Policy to \u201cHTTPS Only\u201d.",
-      "Set the Viewer Protocol Policy to \u201cHTTPS Only\u201d or \u201cRedirect HTTP to HTTPS\u201d."
+      "Set the Origin Protocol Policy to \"HTTPS Only\".",
+      "Set the Viewer Protocol Policy to \"HTTPS Only\" or \"Redirect HTTP to HTTPS\"."
     ]
   },
   {
@@ -2142,7 +2142,7 @@
     "question_text": "A developer is troubleshooting an application that uses Amazon DynamoDB in the us-west-2 Region. The application is deployed to an Amazon EC2 instance. The application requires read-only permissions to a table that is named Cars. The EC2 instance has an attached IAM role that contains the following IAM policy:When the application tries to read from the Cars table, an Access Denied error occurs.<br><br>How can the developer resolve this error?",
     "question_type": "single",
     "choices": [
-      "Modify the IAM policy resource to be \u201carn:aws:dynamodb:us-west-2:account-id:table/*\u201d.",
+      "Modify the IAM policy resource to be \"arn:aws:dynamodb:us-west-2:account-id:table/*\".",
       "Modify the IAM policy to include the dynamodb:* action.",
       "Create a trust policy that specifies the EC2 service principal. Associate the role with the policy.",
       "Create a trust relationship between the role and dynamodb.amazonaws.com."
@@ -2181,13 +2181,13 @@
     "question_text": "A developer has code that is stored in an Amazon S3 bucket. The code must be deployed as an AWS Lambda function across multiple accounts in the same AWS Region as the S3 bucket. An AWS CloudFormation template that runs for each account will deploy the Lambda function.<br><br>What is the MOST secure way to allow CloudFormation to access the Lambda code in the S3 bucket?",
     "question_type": "single",
     "choices": [
-      "Grant the CloudFormation service role the S3 ListBucket and GetObject permissions. Add a bucket policy to Amazon S3 with the principal of \u201cAWS\u201d: [account numbers].",
-      "Grant the CloudFormation service role the S3 GetObject permission. Add a bucket policy to Amazon S3 with the principal of \u201c*\u201d.",
+      "Grant the CloudFormation service role the S3 ListBucket and GetObject permissions. Add a bucket policy to Amazon S3 with the principal of \"AWS\": [account numbers].",
+      "Grant the CloudFormation service role the S3 GetObject permission. Add a bucket policy to Amazon S3 with the principal of \"*\".",
       "Use a service-based link to grant the Lambda function the S3 ListBucket and GetObject permissions by explicitly adding the S3 bucket\u2019s account number in the resource.",
-      "Use a service-based link to grant the Lambda function the S3 GetObject permission. Add a resource of \u201c*\u201d to allow access to the S3 bucket."
+      "Use a service-based link to grant the Lambda function the S3 GetObject permission. Add a resource of \"*\" to allow access to the S3 bucket."
     ],
     "site_answers": [
-      "Grant the CloudFormation service role the S3 ListBucket and GetObject permissions. Add a bucket policy to Amazon S3 with the principal of \u201cAWS\u201d: [account numbers]."
+      "Grant the CloudFormation service role the S3 ListBucket and GetObject permissions. Add a bucket policy to Amazon S3 with the principal of \"AWS\": [account numbers]."
     ]
   },
   {
@@ -3145,12 +3145,12 @@
     "question_type": "single",
     "choices": [
       "Add a listener rule to the listener to return a fixed response if the Authorization header is missing. Set the fixed response to 401 Unauthorized.",
-      "Create an authentication action for the listener rules of the ALSet the rule action type to authenticate-cognito. Set the OnUnauthenticatedRequest field to \u201cdeny.\u201d",
+      "Create an authentication action for the listener rules of the ALSet the rule action type to authenticate-cognito. Set the OnUnauthenticatedRequest field to \"deny.\"",
       "Create an Amazon API Gateway API. Configure all API methods to be forwarded to the ALB endpoint. Create an authorizer of the COGNITO_USER_POOLS type. Configure every API method to use that authorizer.",
       "Create a new target group that includes an AWS Lambda function target that validates the Authorization header by using Amazon Cognito. Associate the target group with the listener."
     ],
     "site_answers": [
-      "Create an authentication action for the listener rules of the ALSet the rule action type to authenticate-cognito. Set the OnUnauthenticatedRequest field to \u201cdeny.\u201d"
+      "Create an authentication action for the listener rules of the ALSet the rule action type to authenticate-cognito. Set the OnUnauthenticatedRequest field to \"deny.\""
     ]
   },
   {
