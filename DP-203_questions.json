@@ -1,6 +1,6 @@
 [
   {
-    "question_text": "You have a table in an Azure Synapse Analytics dedicated SQL pool. The table was created by using the following Transact-SQL statement.\n\nYou need to alter the table to meet the following requirements:\u2711 Ensure that users can identify the current manager of employees.\u2711 Support creating an employee reporting hierarchy for your entire company.\u2711 Provide fast lookup of the managers' attributes such as name and job title.\n\nWhich column should you add to the table?",
+    "question_text": "You have a table in an Azure Synapse Analytics dedicated SQL pool. The table was created by using the following Transact-SQL statement.\n\nCREATE TABLE [dbo] . [DimEmployee] (\n[EmployeeKey] [int] IDENTITY (1,1) NOT NULL,\n[EmployeeID] [int] NOT NULL,\n[FirstName] [varchar] (100) NOT NULL,\n[LastName] [varchar] (100) NOT NULL,\n[JobTitle] [varchar] (100) NULL,\n[LastHireDate] [date] NULL,\n[StreetAddress] [varchar] (500) NOT NULL,\n[City] [varchar] (200) NOT NULL,\n[StateProvince] [varchar] (50) NOT NULL,\n[Portalcode] [varchar] (10) NOT NULL\n)\n\nYou need to alter the table to meet the following requirements:\u2711 Ensure that users can identify the current manager of employees.\u2711 Support creating an employee reporting hierarchy for your entire company.\u2711 Provide fast lookup of the managers' attributes such as name and job title.\n\nWhich column should you add to the table?",
     "question_type": "single",
     "choices": [
       "[ManagerEmployeeID] [smallint] NULL",
