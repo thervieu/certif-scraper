@@ -1,6 +1,6 @@
 [
   {
-    "question_text": "You have a table in an Azure Synapse Analytics dedicated SQL pool. The table was created by using the following Transact-SQL statement.\n\nYou need to alter the table to meet the following requirements:\u2711 Ensure that users can identify the current manager of employees.\u2711 Support creating an employee reporting hierarchy for your entire company.\u2711 Provide fast lookup of the managers' attributes such as name and job title.\n\nWhich column should you add to the table?",
+    "question_text": "You have a table in an Azure Synapse Analytics dedicated SQL pool. The table was created by using the following Transact-SQL statement.\n\nCREATE TABLE [dbo] . [DimEmployee] (\n[EmployeeKey] [int] IDENTITY (1,1) NOT NULL,\n[EmployeeID] [int] NOT NULL,\n[FirstName] [varchar] (100) NOT NULL,\n[LastName] [varchar] (100) NOT NULL,\n[JobTitle] [varchar] (100) NULL,\n[LastHireDate] [date] NULL,\n[StreetAddress] [varchar] (500) NOT NULL,\n[City] [varchar] (200) NOT NULL,\n[StateProvince] [varchar] (50) NOT NULL,\n[Portalcode] [varchar] (10) NOT NULL\n)\n\nYou need to alter the table to meet the following requirements:\u2711 Ensure that users can identify the current manager of employees.\u2711 Support creating an employee reporting hierarchy for your entire company.\u2711 Provide fast lookup of the managers' attributes such as name and job title.\n\nWhich column should you add to the table?",
     "question_type": "single",
     "choices": [
       "[ManagerEmployeeID] [smallint] NULL",
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "question_text": "You have an Azure Synapse workspace named MyWorkspace that contains an Apache Spark database named mytestdb.\n\nYou run the following command in an Azure Synapse Analytics Spark pool in MyWorkspace.\n\nCREATE TABLE mytestdb.myParquetTable(EmployeeID int,EmployeeName string,EmployeeStartDate date)USING Parquet -You then use Spark to insert a row into mytestdb.myParquetTable. The row contains the following data.\n\nOne minute later, you execute the following query from a serverless SQL pool in MyWorkspace.\n\nSELECT EmployeeID -FROM mytestdb.dbo.myParquetTableWHERE EmployeeName = 'Alice';What will be returned by the query?",
+    "question_text": "You have an Azure Synapse workspace named MyWorkspace that contains an Apache Spark database named mytestdb.\n\nYou run the following command in an Azure Synapse Analytics Spark pool in MyWorkspace.\n\nCREATE TABLE mytestdb.myParquetTable(EmployeeID int,EmployeeName string,EmployeeStartDate date)USING Parquet -You then use Spark to insert a row into mytestdb.myParquetTable. The row contains the following data.\n\n\nEmployeeName EmployeeID EmployeeStartDate\nAlice        24         2020-01-25\n\nOne minute later, you execute the following query from a serverless SQL pool in MyWorkspace.\n\nSELECT EmployeeID -FROM mytestdb.dbo.myParquetTableWHERE EmployeeName = 'Alice';What will be returned by the query?",
     "question_type": "single",
     "choices": [
       "24",
@@ -27,11 +27,20 @@
   {
     "question_text": "DRAG DROP -You have a table named SalesFact in an enterprise data warehouse in Azure Synapse Analytics. SalesFact contains sales data from the past 36 months and has the following characteristics:\u2711 Is partitioned by month\u2711 Contains one billion rows\u2711 Has clustered columnstore indexAt the beginning of each month, you need to remove data from SalesFact that is older than 36 months as quickly as possible.\n\nWhich three actions should you perform in sequence in a stored procedure? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "Switch the partition containing the stale data from SalesFact to SalesFact_Work.",
+      "Truncate the partition containing the stale data.",
+      "Drop the SalesFact_Work table.",
+      "Create an empty table named SalesFact_Work that has the same schema as SalesFact.",
+      "Execute a DELETE statement where the value in the Date column is more than 36 months ago.",
+      "Copy the data to a new table by using CREATE TABLE AS SELECT (CTAS)."],
+    "site_answers": [
+      "Create an empty table named SalesFact_Work that has the same schema as SalesFact.",
+      "Switch the partition containing the stale data from SalesFact to SalesFact_Work.",
+      "Drop the SalesFact_Work table."]
   },
   {
-    "question_text": "You have files and folders in Azure Data Lake Storage Gen2 for an Azure Synapse workspace as shown in the following exhibit.\n\nYou create an external table named ExtTable that has LOCATION='/topfolder/'.\n\nWhen you query ExtTable by using an Azure Synapse Analytics serverless SQL pool, which files are returned?",
+    "question_text": "You have files and folders in Azure Data Lake Storage Gen2 for an Azure Synapse workspace as shown in the following exhibit.\n\n topfolder -> [ file1, folder1, folder2, file4] ; folder1 -> file2 ; folder2 -> file3 \n\nYou create an external table named ExtTable that has LOCATION='/topfolder/'.\n\nWhen you query ExtTable by using an Azure Synapse Analytics serverless SQL pool, which files are returned?",
     "question_type": "single",
     "choices": [
       "File2.csv and File3.csv only",
@@ -46,8 +55,10 @@
   {
     "question_text": "HOTSPOT -You are planning the deployment of Azure Data Lake Storage Gen2.\n\nYou have the following two reports that will access the data lake:\u2711 Report1: Reads three columns from a file that contains 50 columns.\u2711 Report2: Queries a single record based on a timestamp.\n\nYou need to recommend in which format to store the data in the data lake to support the reports. The solution must minimize read times.\n\nWhat should you recommend for each report? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["R1 Avro", "R1 Parquet", "R1 CSV", "R1 TSV", "R2 Avro", "R2 Parquet", "R2 CSV", "R2 TSV",],
+    "site_answers": [
+      "R1 Parquet", "R2 Avro"
+    ]
   },
   {
     "question_text": "You are designing the folder structure for an Azure Data Lake Storage Gen2 container.\n\nUsers will query data by using a variety of services including Azure Databricks and Azure Synapse Analytics serverless SQL pools. The data will be secured by subject area. Most queries will include data from the current year or current month.\n\nWhich folder structure should you recommend to support fast queries and simplified folder security?",
@@ -65,32 +76,32 @@
   {
     "question_text": "HOTSPOT -You need to output files from Azure Data Factory.\n\nWhich file format should you use for each type of output? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["Col. format Avro", "Col. format Parquet", "Col. format GZip", "Col. format TXT", "JSON w/ timestamp Avro", "JSON w/ timestamp Parquet", "JSON w/ timestamp GZip", "JSON w/ timestamp TXT"],
+    "site_answers": ["Col. format Parquet", "JSON w/ timestamp Avro"]
   },
   {
     "question_text": "HOTSPOT -You use Azure Data Factory to prepare data to be queried by Azure Synapse Analytics serverless SQL pools.\n\nFiles are initially ingested into an Azure Data Lake Storage Gen2 account as 10 small JSON files. Each file contains the same data attributes and data from a subsidiary of your company.\n\nYou need to move the files to a different folder and transform the data to meet the following requirements:\u2711 Provide the fastest possible query times.\u2711 Automatically infer the schema from the underlying files.\n\nHow should you configure the Data Factory copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["Copy behavior: Flatten hier.", "Copy behavior: Merge files", "Copy behavior: Preserver hier.", "Sink file type: CSV", "Sink file type: JSON", "Sink file type: Parquet", "Sink file type: TXT"],
+    "site_answers": ["Copy behavior: Merge files", "Sink file type: Parquet"]
   },
   {
-    "question_text": "HOTSPOT -You have a data model that you plan to implement in a data warehouse in Azure Synapse Analytics as shown in the following exhibit.\n\nAll the dimension tables will be less than 2 GB after compression, and the fact table will be approximately 6 TB. The dimension tables will be relatively static with very few data inserts and updates.\n\nWhich type of table should you use for each table? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have a data model that you plan to implement in a data warehouse in Azure Synapse Analytics as shown in the following exhibit.\n\nEmployee <=> Fact_DailyBooking <=>Customer <-> (lié à Fact) Time\n\nAll the dimension tables will be less than 2 GB after compression, and the fact table will be approximately 6 TB. The dimension tables will be relatively static with very few data inserts and updates.\n\nWhich type of table should you use for each table? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["Empl/Custo/Time: Hash", "Empl/Custo/Time: Round robin", "Empl/Custo/Time: Replicated", "DailyBooking: Hash", "DailyBooking: Round robin", "DailyBooking: Replicated"],
+    "site_answers": ["Empl/Custo/Time: Replicated", "DailyBooking: Hash"]
   },
   {
     "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 container.\n\nData is ingested into the container, and then transformed by a data integration application. The data is NOT modified after that. Users can read files in the container but cannot modify the files.\n\nYou need to design a data archiving solution that meets the following requirements:\u2711 New data is accessed frequently and must be available as quickly as possible.\u2711 Data that is older than five years is accessed infrequently but must be available within one second when requested.\u2711 Data that is older than seven years is NOT accessed. After seven years, the data must be persisted at the lowest cost possible.\u2711 Costs must be minimized while maintaining the required availability.\n\nHow should you manage the data? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one pointHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["5yo data : Delete the blob.","5yo data : Move to archive storage.","5yo data : Move to cool storage.","5yo data : Move to hot storage.","7yo data : Delete the blob.","7yo data : Move to archive storage.","7yo data : Move to cool storage.","7yo data : Move to hot storage."],
+    "site_answers": ["5yo data : Move to cool storage.", "7yo data : Move to archive storage."]
   },
   {
-    "question_text": "DRAG DROP -You need to create a partitioned table in an Azure Synapse Analytics dedicated SQL pool.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_text": "DRAG DROP -You need to create a partitioned table in an Azure Synapse Analytics dedicated SQL pool.\n\nHow should you complete the Transact-SQL statement? \n\nCREATE TABLE table1\n(\nID INTEGER,\ncoll VARCHAR(10),\nco12 VARCHAR (10)\n) WITH (\nXXX = HASH (ID),\nYYY (ID RANGE LEFT FOR VALUES (1, 1000000, 2000000) ));\n\nTo answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["CLUSTERED INDEX","COLLATE","DISTRIBUTION","PARTITION","PARTITION FUNCTION","PARTITION SCHEME"],
+    "site_answers": ["DISTRIBUTION","PARTITION"]
   },
   {
     "question_text": "You need to design an Azure Synapse Analytics dedicated SQL pool that meets the following requirements:\u2711 Can return an employee record from a given point in time.\u2711 Maintains the latest employee information.\u2711 Minimizes query complexity.\n\nHow should you model the employee data?",
