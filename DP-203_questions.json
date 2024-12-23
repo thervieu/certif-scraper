@@ -1,6 +1,6 @@
 [
   {
-    "question_text": "You have a table in an Azure Synapse Analytics dedicated SQL pool. The table was created by using the following Transact-SQL statement.\n\nCREATE TABLE [dbo] . [DimEmployee] (\n[EmployeeKey] [int] IDENTITY (1,1) NOT NULL,\n[EmployeeID] [int] NOT NULL,\n[FirstName] [varchar] (100) NOT NULL,\n[LastName] [varchar] (100) NOT NULL,\n[JobTitle] [varchar] (100) NULL,\n[LastHireDate] [date] NULL,\n[StreetAddress] [varchar] (500) NOT NULL,\n[City] [varchar] (200) NOT NULL,\n[StateProvince] [varchar] (50) NOT NULL,\n[Portalcode] [varchar] (10) NOT NULL\n)\n\nYou need to alter the table to meet the following requirements:\u2711 Ensure that users can identify the current manager of employees.\u2711 Support creating an employee reporting hierarchy for your entire company.\u2711 Provide fast lookup of the managers' attributes such as name and job title.\n\nWhich column should you add to the table?",
+    "question_text": "You have a table in an Azure Synapse Analytics dedicated SQL pool. The table was created by using the following Transact-SQL statement.\n\nYou need to alter the table to meet the following requirements:\u2711 Ensure that users can identify the current manager of employees.\u2711 Support creating an employee reporting hierarchy for your entire company.\u2711 Provide fast lookup of the managers' attributes such as name and job title.\n\nWhich column should you add to the table?",
     "question_type": "single",
     "choices": [
       "[ManagerEmployeeID] [smallint] NULL",
@@ -25,6 +25,12 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You have a table named SalesFact in an enterprise data warehouse in Azure Synapse Analytics. SalesFact contains sales data from the past 36 months and has the following characteristics:\u2711 Is partitioned by month\u2711 Contains one billion rows\u2711 Has clustered columnstore indexAt the beginning of each month, you need to remove data from SalesFact that is older than 36 months as quickly as possible.\n\nWhich three actions should you perform in sequence in a stored procedure? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have files and folders in Azure Data Lake Storage Gen2 for an Azure Synapse workspace as shown in the following exhibit.\n\nYou create an external table named ExtTable that has LOCATION='/topfolder/'.\n\nWhen you query ExtTable by using an Azure Synapse Analytics serverless SQL pool, which files are returned?",
     "question_type": "single",
     "choices": [
@@ -38,6 +44,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You are planning the deployment of Azure Data Lake Storage Gen2.\n\nYou have the following two reports that will access the data lake:\u2711 Report1: Reads three columns from a file that contains 50 columns.\u2711 Report2: Queries a single record based on a timestamp.\n\nYou need to recommend in which format to store the data in the data lake to support the reports. The solution must minimize read times.\n\nWhat should you recommend for each report? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing the folder structure for an Azure Data Lake Storage Gen2 container.\n\nUsers will query data by using a variety of services including Azure Databricks and Azure Synapse Analytics serverless SQL pools. The data will be secured by subject area. Most queries will include data from the current year or current month.\n\nWhich folder structure should you recommend to support fast queries and simplified folder security?",
     "question_type": "single",
     "choices": [
@@ -49,6 +61,36 @@
     "site_answers": [
       "/{SubjectArea}/{DataSource}/{YYYY}/{MM}/{DD}/{FileData}_{YYYY}_{MM}_{DD}.csv"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You need to output files from Azure Data Factory.\n\nWhich file format should you use for each type of output? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You use Azure Data Factory to prepare data to be queried by Azure Synapse Analytics serverless SQL pools.\n\nFiles are initially ingested into an Azure Data Lake Storage Gen2 account as 10 small JSON files. Each file contains the same data attributes and data from a subsidiary of your company.\n\nYou need to move the files to a different folder and transform the data to meet the following requirements:\u2711 Provide the fastest possible query times.\u2711 Automatically infer the schema from the underlying files.\n\nHow should you configure the Data Factory copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have a data model that you plan to implement in a data warehouse in Azure Synapse Analytics as shown in the following exhibit.\n\nAll the dimension tables will be less than 2 GB after compression, and the fact table will be approximately 6 TB. The dimension tables will be relatively static with very few data inserts and updates.\n\nWhich type of table should you use for each table? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 container.\n\nData is ingested into the container, and then transformed by a data integration application. The data is NOT modified after that. Users can read files in the container but cannot modify the files.\n\nYou need to design a data archiving solution that meets the following requirements:\u2711 New data is accessed frequently and must be available as quickly as possible.\u2711 Data that is older than five years is accessed infrequently but must be available within one second when requested.\u2711 Data that is older than seven years is NOT accessed. After seven years, the data must be persisted at the lowest cost possible.\u2711 Costs must be minimized while maintaining the required availability.\n\nHow should you manage the data? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one pointHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You need to create a partitioned table in an Azure Synapse Analytics dedicated SQL pool.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You need to design an Azure Synapse Analytics dedicated SQL pool that meets the following requirements:\u2711 Can return an employee record from a given point in time.\u2711 Maintains the latest employee information.\u2711 Minimizes query complexity.\n\nHow should you model the employee data?",
@@ -81,6 +123,24 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool that contains the users shown in the following table.\n\nUser1 executes a query on the database, and the query returns the results shown in the following exhibit.\n\nUser1 is the only user who has access to the unmasked data.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "You have an enterprise data warehouse in Azure Synapse Analytics.\n\nUsing PolyBase, you create an external table named [Ext].[Items] to query Parquet files stored in Azure Data Lake Storage Gen2 without importing the data to the data warehouse.\n\nThe external table has three columns.\n\nYou discover that the Parquet files have a fourth column named ItemID.\n\nWhich command should you run to add the ItemID column to the external table?A.\n\nB.\n\nC.\n\nD.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have two Azure Storage accounts named Storage1 and Storage2. Each account holds one container and has the hierarchical namespace enabled. The system has files that contain data stored in the Apache Parquet format.\n\nYou need to copy folders and files from Storage1 to Storage2 by using a Data Factory copy activity. The solution must meet the following requirements:\u2711 No transformations must be performed.\u2711 The original folder structure must be retained.\u2711 Minimize time required to perform the copy activity.\n\nHow should you configure the copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Data Lake Storage Gen2 container that contains 100 TB of data.\n\nYou need to ensure that the data in the container is available for read workloads in a secondary region if an outage occurs in the primary region. The solution must minimize costs.\n\nWhich type of data redundancy should you use?",
     "question_type": "single",
     "choices": [
@@ -107,6 +167,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have a SQL pool in Azure Synapse.\n\nYou plan to load data from Azure Blob storage to a staging table. Approximately 1 million rows of data will be loaded daily. The table will be truncated before each daily load.\n\nYou need to create the staging table. The solution must minimize how long it takes to load the data to the staging table.\n\nHow should you configure the table? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing a fact table named FactPurchase in an Azure Synapse Analytics dedicated SQL pool. The table contains purchases from suppliers for a retail store. FactPurchase will contain the following columns.\n\nFactPurchase will have 1 million rows of data added daily and will contain three years of data.\n\nTransact-SQL queries similar to the following query will be executed daily.\n\nSELECT -SupplierKey, StockItemKey, IsOrderFinalized, COUNT(*)FROM FactPurchase -WHERE DateKey >= 20210101 -AND DateKey <= 20210131 -GROUP By SupplierKey, StockItemKey, IsOrderFinalizedWhich table distribution will minimize query times?",
     "question_type": "single",
     "choices": [
@@ -118,6 +184,12 @@
     "site_answers": [
       "hash-distributed on PurchaseKey"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -From a website analytics system, you receive data extracts about user interactions such as downloads, link clicks, form submissions, and video plays.\n\nThe data contains the following columns.\n\nYou need to design a star schema to support analytical queries of the data. The star schema will contain four tables including a date dimension.\n\nTo which table should you add each column? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Storage account that contains 100 GB of files. The files contain rows of text and numerical values. 75% of the rows contain description data that has an average length of 1.1 MB.\n\nYou plan to copy the data from the storage account to an enterprise data warehouse in Azure Synapse Analytics.\n\nYou need to prepare the files to ensure that the data copies quickly.\n\nSolution: You convert the files to compressed delimited text files.\n\nDoes this meet the goal?",
@@ -205,6 +277,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You store files in an Azure Data Lake Storage Gen2 container. The container has the storage policy shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing a financial transactions table in an Azure Synapse Analytics dedicated SQL pool. The table will have a clustered columnstore index and will include the following columns:\u2711 TransactionType: 40 million rows per transaction type\u2711 CustomerSegment: 4 million per customer segment\u2711 TransactionMonth: 65 million rows per monthAccountType: 500 million per account typeYou have the following query requirements:\u2711 Analysts will most commonly analyze transactions for a given month.\u2711 Transactions analysis will typically summarize transactions by transaction type, customer segment, and/or account typeYou need to recommend a partition strategy for the table to minimize query times.\n\nOn which column should you recommend partitioning the table?",
     "question_type": "single",
     "choices": [
@@ -216,6 +294,12 @@
     "site_answers": [
       "TransactionMonth"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 account named account1 that stores logs as shown in the following table.\n\nYou do not expect that the logs will be accessed during the retention periods.\n\nYou need to recommend a solution for account1 that meets the following requirements:\u2711 Automatically deletes the logs at the end of each retention period\u2711 Minimizes storage costsWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You plan to ingest streaming social media data by using Azure Stream Analytics. The data will be stored in files in Azure Data Lake Storage, and then consumed by using Azure Databricks and PolyBase in Azure Synapse Analytics.\n\nYou need to recommend a Stream Analytics data output format to ensure that the queries from Databricks and PolyBase against the files encounter the fewest possible errors. The solution must ensure that the files can be queried quickly and that the data type information is retained.\n\nWhat should you recommend?",
@@ -261,6 +345,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have a Microsoft SQL Server database that uses a third normal form schema.\n\nYou plan to migrate the data in the database to a star schema in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to design the dimension tables. The solution must optimize read operations.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You plan to develop a dataset named Purchases by using Azure Databricks. Purchases will contain the following columns:\u2711 ProductID\u2711 ItemPrice\u2711 LineTotal\u2711 Quantity\u2711 StoreID\u2711 Minute\u2711 Month\u2711 HourYear -\u2711 DayYou need to store the data to support hourly incremental load pipelines that will vary for each Store ID. The solution must minimize storage costs.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing a partition strategy for a fact table in an Azure Synapse Analytics dedicated SQL pool. The table has the following specifications:\u2711 Contain sales data for 20,000 products.\n\nUse hash distribution on a column named ProductID.\u2711 Contain 2.4 billion records for the years 2019 and 2020.\n\nWhich number of partition ranges provides optimal compression and performance for the clustered columnstore index?",
     "question_type": "single",
     "choices": [
@@ -272,6 +368,12 @@
     "site_answers": [
       "40"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You are creating dimensions for a data warehouse in an Azure Synapse Analytics dedicated SQL pool.\n\nYou create a table by using the Transact-SQL statement shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You are designing a fact table named FactPurchase in an Azure Synapse Analytics dedicated SQL pool. The table contains purchases from suppliers for a retail store. FactPurchase will contain the following columns.\n\nFactPurchase will have 1 million rows of data added daily and will contain three years of data.\n\nTransact-SQL queries similar to the following query will be executed daily.\n\nSELECT -SupplierKey, StockItemKey, COUNT(*)FROM FactPurchase -WHERE DateKey >= 20210101 -AND DateKey <= 20210131 -GROUP By SupplierKey, StockItemKeyWhich table distribution will minimize query times?",
@@ -298,6 +400,12 @@
     "site_answers": [
       "Use Snappy compression for the files."
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You need to build a solution to ensure that users can query specific files in an Azure Data Lake Storage Gen2 account from an Azure Synapse Analytics serverless SQL pool.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You are designing a data mart for the human resources (HR) department at your company. The data mart will contain employee information and employee transactions.\n\nFrom a source system, you have a flat extract that has the following fields:\u2711 EmployeeIDFirstName -\u2711 LastName\u2711 Recipient\u2711 GrossAmount\u2711 TransactionID\u2711 GovernmentID\u2711 NetAmountPaid\u2711 TransactionDateYou need to design a star schema data model in an Azure Synapse Analytics dedicated SQL pool for the data mart.\n\nWhich two tables should you create? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -328,6 +436,18 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You have data stored in thousands of CSV files in Azure Data Lake Storage Gen2. Each file has a header row followed by a properly formatted carriage return (/ r) and line feed (/n).\n\nYou are implementing a pattern that batch loads the files daily into a dedicated SQL pool in Azure Synapse Analytics by using PolyBase.\n\nYou need to skip the header row when you import the files into the data warehouse. Before building the loading pattern, you need to prepare the required database objects in Azure Synapse Analytics.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: Each correct selection is worth one pointSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are building an Azure Synapse Analytics dedicated SQL pool that will contain a fact table for transactions from the first half of the year 2020.\n\nYou need to ensure that the table meets the following requirements:\u2711 Minimizes the processing time to delete data that is older than 10 years\u2711 Minimizes the I/O for queries that use year-to-date valuesHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are performing exploratory analysis of the bus fare data in an Azure Data Lake Storage Gen2 account by using an Azure Synapse Analytics serverless SQL pool.\n\nYou execute the Transact-SQL query shown in the following exhibit.\n\nWhat do the query results include?",
     "question_type": "single",
     "choices": [
@@ -339,6 +459,18 @@
     "site_answers": [
       "Only CSV that have file names that beginning with \"tripdata_2020\"."
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You use PySpark in Azure Databricks to parse the following JSON input.\n\nYou need to output the data in the following tabular format.\n\nHow should you complete the PySpark code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the spit bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are designing an application that will store petabytes of medical imaging data.\n\nWhen the data is first created, the data will be accessed frequently during the first week. After one month, the data must be accessible within 30 seconds, but files will be accessed infrequently. After one year, the data will be accessed infrequently but must be accessible within five minutes.\n\nYou need to select a storage strategy for the data. The solution must minimize costs.\n\nWhich storage tier should you use for each time frame? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics Apache Spark pool named Pool1.\n\nYou plan to load JSON files from an Azure Data Lake Storage Gen2 container into the tables in Pool1. The structure and data types vary by file.\n\nYou need to load the files into the tables. The solution must maintain the source data types.\n\nWhat should you do?",
@@ -367,6 +499,30 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job that queries reference data from a product catalog file. The file is updated daily.\n\nThe reference data input details for the file are shown in the Input exhibit. (Click the Input tab.)The storage account container view is shown in the Refdata exhibit. (Click the Refdata tab.)You need to configure the Stream Analytics job to pick up the new reference data.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have the following Azure Stream Analytics query.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are building a database in an Azure Synapse Analytics serverless SQL pool.\n\nYou have data stored in Parquet files in an Azure Data Lake Storege Gen2 container.\n\nRecords are structured as shown in the following sample.{\"id\": 123,\"address_housenumber\": \"19c\",\"address_line\": \"Memory Lane\",\"applicant1_name\": \"Jane\",\"applicant2_name\": \"Dev\"}The records contain two applicants at most.\n\nYou need to build a table that includes only the address fields.\n\nHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool named Pool1 and an Azure Data Lake Storage Gen2 account named Account1.\n\nYou plan to access the files in Account1 by using an external table.\n\nYou need to create a data source in Pool1 that you can reference when you create the external table.\n\nHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure subscription that contains an Azure Blob Storage account named storage1 and an Azure Synapse Analytics dedicated SQL pool namedPool1.\n\nYou need to store data in storage1. The data will be read by Pool1. The solution must meet the following requirements:Enable Pool1 to skip columns and rows that are unnecessary in a query.\u2711 Automatically create column statistics.\u2711 Minimize the size of files.\n\nWhich type of file should you use?",
     "question_type": "single",
     "choices": [
@@ -378,6 +534,42 @@
     "site_answers": [
       "Parquet"
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You plan to create a table in an Azure Synapse Analytics dedicated SQL pool.\n\nData in the table will be retained for five years. Once a year, data that is older than five years will be deleted.\n\nYou need to ensure that the data is distributed evenly across partitions. The solution must minimize the amount of time required to delete old data.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 service.\n\nYou need to design a data archiving solution that meets the following requirements:\u2711 Data that is older than five years is accessed infrequently but must be available within one second when requested.\u2711 Data that is older than seven years is NOT accessed.\u2711 Costs must be minimized while maintaining the required availability.\n\nHow should you manage the data? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You plan to create an Azure Data Lake Storage Gen2 account.\n\nYou need to recommend a storage solution that meets the following requirements:\u2711 Provides the highest degree of data resiliency\u2711 Ensures that content remains available for writes if a primary data center failsWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "You need to implement a Type 3 slowly changing dimension (SCD) for product category data in an Azure Synapse Analytics dedicated SQL pool.\n\nYou have a table that was created by using the following Transact-SQL statement.\n\nWhich two columns should you add to the table? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.\n\nA.\n\nB.\n\nC.\n\nD.\n\nE.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure subscription.\n\nYou plan to build a data warehouse in an Azure Synapse Analytics dedicated SQL pool named pool1 that will contain staging tables and a dimensional model.\n\nPool1 will contain the following tables.\n\nYou need to design the table storage for pool1. The solution must meet the following requirements:\u2711 Maximize the performance of data loading operations to Staging.\n\nWebSessions.\u2711 Minimize query times for reporting queries against the dimensional model.\n\nWhich type of table distribution should you use for each table? To answer, drag the appropriate table distribution types to the correct tables. Each table distribution type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a table named FactInternetSales that will be a large fact table in a dimensional model. FactInternetSales will contain 100 million rows and two columns named SalesAmount and OrderQuantity. Queries executed on FactInternetSales will aggregate the values in SalesAmount and OrderQuantity from the last year for a specific product. The solution must minimize the data size and query execution time.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool that contains a table named Table1. Table1 contains the following:\u2711 One billion rows\u2711 A clustered columnstore index\u2711 A hash-distributed column named Product Key\u2711 A column named Sales Date that is of the date data type and cannot be nullThirty million rows will be added to Table1 each month.\n\nYou need to partition Table1 based on the Sales Date column. The solution must optimize query performance and data loading.\n\nHow often should you create a partition?",
@@ -455,6 +647,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 account that contains a container named container1. You have an Azure Synapse Analytics serverless SQL pool that contains a native external table named dbo.\n\nTable1. The source data for dbo.\n\nTable1 is stored in container1. The folder structure of container1 is shown in the following exhibit.\n\nThe external data source is defined by using the following statement.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a fact table named Table1 that will store sales data from the last three years. The solution must be optimized for the following query operations:\u2022\tShow order counts by week.\u2022\tCalculate sales totals by region.\u2022\tCalculate sales totals by product.\u2022\tFind all the orders from a given month.\n\nWhich data should you use to partition Table1?",
     "question_type": "single",
     "choices": [
@@ -510,6 +708,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool.\n\nYou plan to deploy a solution that will analyze sales data and include the following:\u2022\tA table named Country that will contain 195 rows\u2022\tA table named Sales that will contain 100 million rows\u2022\tA query to identify total sales by country and customer from the past 30 daysYou need to create the tables. The solution must maximize query performance.\n\nHow should you complete the script? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure subscription that contains an Azure Data Lake Storage Gen2 account named account1 and an Azure Synapse Analytics workspace named workspace1.\n\nYou need to create an external table in a serverless SQL pool in workspace1. The external table will reference CSV files stored in account1. The solution must maximize performance.\n\nHow should you configure the external table?",
     "question_type": "single",
     "choices": [
@@ -521,6 +725,12 @@
     "site_answers": [
       "Use a native external table and authenticate by using a shared access signature (SAS)."
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics serverless SQL pool that contains a database named db1. The data model for db1 is shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the exhibit.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Databricks workspace and an Azure Data Lake Storage Gen2 account named storage1.\n\nNew files are uploaded daily to storage1.\n\nYou need to recommend a solution that configures storage1 as a structured streaming source. The solution must meet the following requirements:\u2022\tIncrementally process new files as they are uploaded to storage1.\u2022\tMinimize implementation and maintenance effort.\u2022\tMinimize the cost of processing millions of files.\u2022\tSupport schema inference and schema drift.\n\nWhich should you include in the recommendation?",
@@ -576,6 +786,30 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You plan to use an Azure Data Lake Storage Gen2 account to implement a Data Lake development environment that meets the following requirements:\u2022\tRead and write access to data must be maintained if an availability zone becomes unavailable.\u2022\tData that was last modified more than two years ago must be deleted automatically.\u2022\tCosts must be minimized.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are designing an Azure Data Lake Storage Gen2 container to store data for the human resources (HR) department and the operations department at your company.\n\nYou have the following data access requirements:\u2022\tAfter initial processing, the HR department data will be retained for seven years and rarely accessed.\u2022\tThe operations department data will be accessed frequently for the first six months, and then accessed once per month.\n\nYou need to design a data retention solution to meet the access requirements. The solution must minimize storage costs.\n\nWhat should you include in the storage policy for each department? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are developing an Azure Synapse Analytics pipeline that will include a mapping data flow named Dataflow1. Dataflow1 will read customer data from an external source and use a Type 1 slowly changing dimension (SCD) when loading the data into a table named DimCustomer in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to ensure that Dataflow1 can perform the following tasks:\u2022 Detect whether the data of a given customer has changed in the DimCustomer table.\u2022 Perform an upsert to the DimCustomer table.\n\nWhich type of transformation should you use for each task? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Synapse Analytics serverless SQL pool.\n\nYou have an Azure Data Lake Storage account named adls1 that contains a public container named container1. The container1 container contains a folder named folder1.\n\nYou need to query the top 100 rows of all the CSV files in folder1.\n\nHow should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Synapse Analytics workspace named WS1 that contains an Apache Spark pool named Pool1.\n\nYou plan to create a database named DB1 in Pool1.\n\nYou need to ensure that when tables are created in DB1, the tables are available automatically as external tables to the built-in serverless SQL pool.\n\nWhich format should you use for the tables in DB1?",
     "question_type": "single",
     "choices": [
@@ -617,6 +851,24 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains the Azure Synapse Analytics workspaces shown in the following table.\n\nEach workspace must read and write data to datalake1.\n\nEach workspace contains an unused Apache Spark pool.\n\nYou plan to configure each Spark pool to share catalog objects that reference datalake1.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have a data warehouse.\n\nYou need to implement a slowly changing dimension (SCD) named Product that will include three columns named ProductName, ProductColor, and ProductSize. The solution must meet the following requirements:\u2022\tPrevent changes to the values stored in ProductName.\u2022\tRetain only the current and the last values in ProductSize.\u2022\tRetain all the current and previous values in ProductColor.\n\nWhich type of SCD should you implement for each column? To answer, drag the appropriate types to the correct columns. Each type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are incrementally loading data into fact tables in an Azure Synapse Analytics dedicated SQL pool.\n\nEach batch of incoming data is staged before being loaded into the fact tables.\n\nYou need to ensure that the incoming data is staged as quickly as possible.\n\nHow should you configure the staging tables? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure subscription that contains an Azure Synapse Analytics workspace named ws1 and an Azure Cosmos DB database account named Cosmos1. Cosmos1 contains a container named container1 and ws1 contains a serverless SQL pool.\n\nYou need to ensure that you can query the data in container1 by using the serverless SQL pool.\n\nWhich three actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -633,6 +885,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains the resources shown in the following table.\n\nThe storage1 account contains a container named container1. The container1 container contains the following files.\n\nIn Pool1, you run the following script.\n\nIn the Built-in serverless SQL pool, you run the following script.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure Data Lake Storage Gen2 account named account1 and a user named User1.\n\nIn account1, you create a container named container1. In container1, you create a folder named folder1.\n\nYou need to ensure that User1 can list and read all the files in folder1. The solution must use the principle of least privilege.\n\nHow should you configure the permissions for each folder? To answer, drag the appropriate permissions to the correct folders. Each permission may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Data Factory pipeline named pipeline1.\n\nYou need to execute pipeline1 at 2 AM every day. The solution must ensure that if the trigger for pipeline1 stops, the next pipeline execution will occur at 2 AM, following a restart of the trigger.\n\nWhich type of trigger should you create?",
     "question_type": "single",
     "choices": [
@@ -646,6 +910,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure data factory named adf1 that contains a pipeline named ExecProduct. ExecProduct contains a data flow named Product.\n\nThe Product data flow contains the following transformations:1. WeeklyData: A source that points to a CSV file in an Azure Data Lake Storage Gen2 account with 20 columns2. ProductColumns: A select transformation that selects from WeeklyData six columns named ProductID, ProductDescr, ProductSubCategory, ProductCategory, ProductStatus, and ProductLastUpdated3. ProductRows: An aggregate transformation4. ProductList: A sink that outputs data to an Azure Synapse Analytics dedicated SQL poolThe Aggregate settings for ProductRows are configured as shown in the following exhibit.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You manage an enterprise data warehouse in Azure Synapse Analytics.\n\nUsers report slow performance when they run commonly used queries. Users do not report performance changes for infrequently used queries.\n\nYou need to monitor resource utilization to determine the source of the performance issues.\n\nWhich metric should you monitor?",
     "question_type": "single",
     "choices": [
@@ -657,6 +927,12 @@
     "site_answers": [
       "Cache hit percentage"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics serverless SQL pool.\n\nYou have an Apache Parquet file that contains 10 columns.\n\nYou need to query data from the file. The solution must return only two columns.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics workspace that contains an Apache Spark pool named SparkPool1. SparkPool1 contains a Delta Lake table named SparkTable1.\n\nYou need to recommend a solution that supports Transact-SQL queries against the data referenced by SparkTable1. The solution must ensure that the queries can use partition elimination.\n\nWhat should you include in the recommendation?",
@@ -715,6 +991,12 @@
       "[OriginalColor] NVARCHAR(50) NOT NULL",
       "[OriginalProductName] NVARCHAR(100) NULL"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool named Pool1. Pool1 contains a fact table named Table1. Table1 contains sales data. Sixty-five million rows of data are added to Table1 monthly.\n\nAt the end of each month, you need to remove data that is older than 36 months. The solution must minimize how long it takes to remove the data.\n\nHow should you partition Table1, and how should you remove the old data? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure subscription that contains an Azure Synapse Analytics serverless SQL pool.\n\nYou execute the following query.\n\nWhere will the rows returned by the query be stored?",
@@ -789,6 +1071,24 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Databricks workspace.\n\nYou read data from a CSV file by using a notebook, and then load the data to a DataFrame.\n\nYou need to add rows from the DataFrame to an existing Delta table by using Python code.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure Cosmos DB for NoSQL account named account1. The account1 account contains a container named Container1 that has the following configurations:\u2022\tAnalytical store: On\u2022\tTTL: 3600You need to remove analytical store support from Container1. The solution must meet the following requirements:\u2022\tMinimize the impact on the apps that reference Container1.\u2022\tMinimize storage usage.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Synapse Analytics dedicated SQL pool named SQL1 that contains a hash-distributed fact table named Table1.\n\nYou need to recreate Table1 and add a new distribution column. The solution must maximize the availability of data.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure subscription that contains an Azure data factory named ADF1.\n\nFrom Azure Data Factory Studio, you build a complex data pipeline in ADF1.\n\nYou discover that the Save button is unavailable, and there are validation errors that prevent the pipeline from being published.\n\nYou need to ensure that you can save the logic of the pipeline.\n\nSolution: You disable all the triggers for ADF1.\n\nDoes this meet the goal?",
     "question_type": "single",
     "choices": [
@@ -825,6 +1125,18 @@
     "site_answers": [
       "3"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage account that contains CSV files. The CSV files contain sales order data and are partitioned by using the following format./data/salesorders/year=xxxx/month=yYou need to retrieve only the sales orders from January 2023 and February 2023.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You plan to create a real-time monitoring app that alerts users when a device travels more than 200 meters away from a designated location.\n\nYou need to design an Azure Stream Analytics job to process the data for the planned app. The solution must minimize the amount of code developed and the number of technologies used.\n\nWhat should you include in the Stream Analytics job? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "A company has a real-time data analysis solution that is hosted on Microsoft Azure. The solution uses Azure Event Hub to ingest data and an Azure StreamAnalytics cloud job to analyze the data. The cloud job is configured to use 120 Streaming Units (SU).\n\nYou need to optimize performance for the Azure Stream Analytics job.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -868,6 +1180,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You are processing streaming data from vehicles that pass through a toll booth.\n\nYou need to use Azure Stream Analytics to return the license plate, vehicle make, and hour the last vehicle passed during each 10-minute window.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Data Factory instance that contains two pipelines named Pipeline1 and Pipeline2.\n\nPipeline1 has the activities shown in the following exhibit.\n\nPipeline2 has the activities shown in the following exhibit.\n\nYou execute Pipeline2, and Stored procedure1 in Pipeline1 fails.\n\nWhat is the status of the pipeline runs?",
     "question_type": "single",
     "choices": [
@@ -879,6 +1197,30 @@
     "site_answers": [
       "Pipeline1 and Pipeline2 succeeded."
     ]
+  },
+  {
+    "question_text": "HOTSPOT -A company plans to use Platform-as-a-Service (PaaS) to create the new data pipeline process. The process must meet the following requirements:Ingest:\u2711 Access multiple data sources.\u2711 Provide the ability to orchestrate workflow.\u2711 Provide the capability to run SQL Server Integration Services packages.\n\nStore:\u2711 Optimize storage for big data workloads.\u2711 Provide encryption of data at rest.\u2711 Operate with no size limits.\n\nPrepare and Train:\u2711 Provide a fully-managed and interactive workspace for exploration and visualization.\u2711 Provide the ability to program in R, SQL, Python, Scala, and Java.\n\nProvide seamless user authentication with Azure Active Directory.\n\nModel & Serve:\u2711 Implement native columnar storage.\u2711 Support for the SQL language\u2711 Provide support for structured streaming.\n\nYou need to build the data integration pipeline.\n\nWhich technologies should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have the following table named Employees.\n\nYou need to calculate the employee_type value based on the hire_date value.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Synapse Analytics workspace named WS1.\n\nYou have an Azure Data Lake Storage Gen2 container that contains JSON-formatted files in the following format.\n\nYou need to use the serverless SQL pool in WS1 to read the files.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Apache Spark DataFrame named temperatures. A sample of the data is shown in the following table.\n\nYou need to produce the following table by using a Spark SQL query.\n\nHow should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all.\n\nYou may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Data Factory that contains 10 pipelines.\n\nYou need to label each pipeline with its main purpose of either ingest, transform, or load. The labels must be available for grouping and filtering when using the monitoring experience in Data Factory.\n\nWhat should you add to each pipeline?",
@@ -894,6 +1236,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -The following code segment is used to create an Azure Databricks cluster.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing a statistical analysis solution that will use custom proprietary Python functions on near real-time data from Azure Event Hubs.\n\nYou need to recommend which Azure service to use to perform the statistical analysis. The solution must minimize latency.\n\nWhat should you recommend?",
     "question_type": "single",
     "choices": [
@@ -905,6 +1253,12 @@
     "site_answers": [
       "Azure Databricks"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an enterprise data warehouse in Azure Synapse Analytics that contains a table named FactOnlineSales. The table contains data from the start of 2009 to the end of 2012.\n\nYou need to improve the performance of queries against FactOnlineSales by using table partitions. The solution must meet the following requirements:\u2711 Create four partitions based on the order date.\u2711 Ensure that each partition contains all the orders placed during a given calendar year.\n\nHow should you complete the T-SQL command? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You need to implement a Type 3 slowly changing dimension (SCD) for product category data in an Azure Synapse Analytics dedicated SQL pool.\n\nYou have a table that was created by using the following Transact-SQL statement.\n\nWhich two columns should you add to the table? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -944,6 +1298,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job to identify how much time a user spends interacting with a feature on a webpage.\n\nThe job receives events based on user actions on the webpage. Each row of data represents an event. Each event has a type of either 'start' or 'end'.\n\nYou need to calculate the duration between start and end events.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are creating an Azure Data Factory data flow that will ingest data from a CSV file, cast columns to specified types of data, and insert the data into a table in anAzure Synapse Analytic dedicated SQL pool. The CSV file contains three columns named username, comment, and date.\n\nThe data flow already contains the following:\u2711 A source transformation.\u2711 A Derived Column transformation to set the appropriate types of data.\u2711 A sink transformation to land the data in the pool.\n\nYou need to ensure that the data flow meets the following requirements:\u2711 All valid rows must be written to the destination table.\u2711 Truncation errors in the comment column must be avoided proactively.\u2711 Any rows containing comment values that will cause truncation errors upon insert must be written to a file in blob storage.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -958,6 +1318,36 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You need to create an Azure Data Factory pipeline to process data for the following three departments at your company: Ecommerce, retail, and wholesale. The solution must ensure that data can also be processed for the entire company.\n\nHow should you complete the Data Factory data flow script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Data Lake Storage Gen2 account that contains a JSON file for customers. The file contains two attributes named FirstName and LastName.\n\nYou need to copy the data from the JSON file to an Azure Synapse Analytics table by using Azure Databricks. A new column must be created that concatenates the FirstName and LastName values.\n\nYou create the following components:\u2711 A destination table in Azure Synapse\u2711 An Azure Blob storage container\u2711 A service principalWhich five actions should you perform in sequence next in is Databricks notebook? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You build an Azure Data Factory pipeline to move data from an Azure Data Lake Storage Gen2 container to a database in an Azure Synapse Analytics dedicatedSQL pool.\n\nData in the container is stored in the following folder structure./in/{YYYY}/{MM}/{DD}/{HH}/{mm}The earliest folder is /in/2021/01/01/00/00. The latest folder is /in/2021/01/15/01/45.\n\nYou need to configure a pipeline trigger to meet the following requirements:\u2711 Existing data must be loaded.\u2711 Data must be loaded every 30 minutes.\u2711 Late-arriving data of up to two minutes must be included in the load for the time at which the data should have arrived.\n\nHow should you configure the pipeline trigger? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are designing a near real-time dashboard solution that will visualize streaming data from remote sensors that connect to the internet. The streaming data must be aggregated to show the average value of each 10-second interval. The data will be discarded after being displayed in the dashboard.\n\nThe solution will use Azure Stream Analytics and must meet the following requirements:\u2711 Minimize latency from an Azure Event hub to the dashboard.\u2711 Minimize the required storage.\u2711 Minimize development effort.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one pointHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Stream Analytics job that is a Stream Analytics project solution in Microsoft Visual Studio. The job accepts data generated by IoT devices in the JSON format.\n\nYou need to modify the job to accept data generated by the IoT devices in the Protobuf format.\n\nWhich three actions should you perform from Visual Studio on sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Storage account and a data warehouse in Azure Synapse Analytics in the UK South region.\n\nYou need to copy blob data from the storage account to the data warehouse by using Azure Data Factory. The solution must meet the following requirements:\u2711 Ensure that the data remains in the UK South region at all times.\u2711 Minimize administrative effort.\n\nWhich type of integration runtime should you use?",
     "question_type": "single",
     "choices": [
@@ -968,6 +1358,12 @@
     "site_answers": [
       "Azure integration runtime"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure SQL database named Database1 and two Azure event hubs named HubA and HubB. The data consumed from each source is shown in the following table.\n\nYou need to implement Azure Stream Analytics to calculate the average fare per mile by driver.\n\nHow should you configure the Stream Analytics input for each source? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Stream Analytics job that receives clickstream data from an Azure event hub.\n\nYou need to define a query in the Stream Analytics job. The query must meet the following requirements:\u2711 Count the number of clicks within each 10-second window based on the country of a visitor.\u2711 Ensure that each click is NOT counted more than once.\n\nHow should you define the Query?",
@@ -981,6 +1377,12 @@
     "site_answers": [
       "SELECT Country, Count(*) AS Count FROM ClickStream TIMESTAMP BY CreatedAt GROUP BY Country, TumblingWindow(second, 10)"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You are building an Azure Analytics query that will receive input data from Azure IoT Hub and write the results to Azure Blob storage.\n\nYou need to calculate the difference in the number of readings per sensor per hour.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You need to schedule an Azure Data Factory pipeline to execute when a new file arrives in an Azure Data Lake Storage Gen2 container.\n\nWhich type of trigger should you use?",
@@ -1035,6 +1437,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You are designing a monitoring solution for a fleet of 500 vehicles. Each vehicle has a GPS tracking device that sends data to an Azure event hub once per minute.\n\nYou have a CSV file in an Azure Data Lake Storage Gen2 container. The file maintains the expected geographical area in which each vehicle should be.\n\nYou need to ensure that when a GPS position is outside the expected area, a message is added to another event hub for processing within 30 seconds. The solution must minimize cost.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing an Azure Databricks table. The table will ingest an average of 20 million streaming events per day.\n\nYou need to persist the events in the table for use in incremental load pipeline jobs in Azure Databricks. The solution must minimize storage costs and incremental load times.\n\nWhat should you include in the solution?",
     "question_type": "single",
     "choices": [
@@ -1046,6 +1454,12 @@
     "site_answers": [
       "Sink to Azure Queue storage."
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have a self-hosted integration runtime in Azure Data Factory.\n\nThe current status of the integration runtime has the following configurations:\u2711 Status: Running\u2711 Type: Self-Hosted\u2711 Version: 4.4.7292.1\u2711 Running / Registered Node(s): 1/1\u2711 High Availability Enabled: False\u2711 Linked Count: 0\u2711 Queue Length: 0\u2711 Average Queue Duration. 0.00sThe integration runtime has the following node details:\u2711 Name: X-M\u2711 Status: Running\u2711 Version: 4.4.7292.1\u2711 Available Memory: 7697MB\u2711 CPU Utilization: 6%\u2711 Network (In/Out): 1.21KBps/0.83KBps\u2711 Concurrent Jobs (Running/Limit): 2/14\u2711 Role: Dispatcher/Worker\u2711 Credential Status: In SyncUse the drop-down menus to select the answer choice that completes each statement based on the information presented.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Databricks workspace named workspace1 in the Standard pricing tier.\n\nYou need to configure workspace1 to support autoscaling all-purpose clusters. The solution must meet the following requirements:\u2711 Automatically scale down workers when the cluster is underutilized for three minutes.\u2711 Minimize the time it takes to scale to the maximum number of workers.\u2711 Minimize costs.\n\nWhat should you do first?",
@@ -1096,6 +1510,30 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You configure version control for an Azure Data Factory instance as shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are designing an Azure Stream Analytics solution that receives instant messaging data from an Azure Event Hub.\n\nYou need to ensure that the output from the Stream Analytics job counts the number of messages per time zone every 15 seconds.\n\nHow should you complete the Stream Analytics query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Factory instance named ADF1 and two Azure Synapse Analytics workspaces named WS1 and WS2.\n\nADF1 contains the following pipelines:\u2711 P1: Uses a copy activity to copy data from a nonpartitioned table in a dedicated SQL pool of WS1 to an Azure Data Lake Storage Gen2 account\u2711 P2: Uses a copy activity to copy data from text-delimited files in an Azure Data Lake Storage Gen2 account to a nonpartitioned table in a dedicated SQL pool of WS2You need to configure P1 and P2 to maximize parallelism and performance.\n\nWhich dataset settings should you configure for the copy activity if each pipeline? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Storage account that generates 200,000 new files daily. The file names have a format of {YYYY}/{MM}/{DD}/{HH}/{CustomerID}.csv.\n\nYou need to design an Azure Data Factory solution that will load new data from the storage account to an Azure Data Lake once hourly. The solution must minimize load times and costs.\n\nHow should you configure the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou plan to create an Azure Databricks workspace that has a tiered structure. The workspace will contain the following three workloads:\u2711 A workload for data engineers who will use Python and SQL.\u2711 A workload for jobs that will run notebooks that use Python, Scala, and SQL.\u2711 A workload that data scientists will use to perform ad hoc analysis in Scala and R.\n\nThe enterprise architecture team at your company identifies the following standards for Databricks environments:\u2711 The data engineers must share a cluster.\u2711 The job cluster will be managed by using a request process whereby data scientists and data engineers provide packaged notebooks for deployment to the cluster.\u2711 All the data scientists must be assigned their own cluster that terminates automatically after 120 minutes of inactivity. Currently, there are three data scientists.\n\nYou need to create the Databricks clusters for the workloads.\n\nSolution: You create a Standard cluster for each data scientist, a Standard cluster for the data engineers, and a High Concurrency cluster for the jobs.\n\nDoes this meet the goal?",
     "question_type": "single",
     "choices": [
@@ -1120,6 +1558,12 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You are responsible for providing access to an Azure Data Lake Storage Gen2 account.\n\nYour user account has contributor access to the storage account, and you have the application ID and access key.\n\nYou plan to use PolyBase to load data into an enterprise data warehouse in Azure Synapse Analytics.\n\nYou need to configure PolyBase to connect the data warehouse to storage account.\n\nWhich three components should you create in sequence? To answer, move the appropriate components from the list of components to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are monitoring an Azure Stream Analytics job by using metrics in Azure.\n\nYou discover that during the last 12 hours, the average watermark delay is consistently greater than the configured late arrival tolerance.\n\nWhat is a possible cause of this behavior?",
     "question_type": "single",
     "choices": [
@@ -1131,6 +1575,12 @@
     "site_answers": [
       "The job lacks the resources to process the volume of incoming data."
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job to retrieve game data.\n\nYou need to ensure that the job returns the highest scoring record for each five-minute time interval of each game.\n\nHow should you complete the Stream Analytics query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Data Lake Storage account that contains a staging zone.\n\nYou need to design a daily process to ingest incremental data from the staging zone, transform the data by executing an R script, and then insert the transformed data into a data warehouse in Azure Synapse Analytics.\n\nSolution: You use an Azure Data Factory schedule trigger to execute a pipeline that copies the data to a staging table in the data warehouse, and then uses a stored procedure to execute the R script.\n\nDoes this meet the goal?",
@@ -1166,6 +1616,24 @@
     "site_answers": [
       "High Concurrency with Autoscaling"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You are building an Azure Data Factory solution to process data received from Azure Event Hubs, and then ingested into an Azure Data Lake Storage Gen2 container.\n\nThe data will be ingested every five minutes from devices into JSON files. The files have the following naming pattern./{deviceType}/in/{YYYY}/{MM}/{DD}/{HH}/{deviceID}_{YYYY}{MM}{DD}HH}{mm}.jsonYou need to prepare the data for batch data processing so that there is one dataset per hour per deviceType. The solution must minimize read times.\n\nHow should you configure the sink for the copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You are designing an Azure Data Lake Storage Gen2 structure for telemetry data from 25 million devices distributed across seven key geographical regions. Each minute, the devices will send a JSON payload of metrics to Azure Event Hubs.\n\nYou need to recommend a folder structure for the data. The solution must meet the following requirements:\u2711 Data engineers from each region must be able to build their own pipelines for the data of their respective region only.\u2711 The data must be processed at least once every 15 minutes for inclusion in Azure Synapse Analytics serverless SQL pools.\n\nHow should you recommend completing the structure? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are implementing an Azure Stream Analytics solution to process event data from devices.\n\nThe devices output events when there is a fault and emit a repeat of the event every five seconds until the fault is resolved. The devices output a heartbeat event every five seconds after a previous event if there are no faults present.\n\nA sample of the events is shown in the following table.\n\nYou need to calculate the uptime between the faults.\n\nHow should you complete the Stream Analytics SQL query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You are creating a new notebook in Azure Databricks that will support R as the primary language but will also support Scala and SQL.\n\nWhich switch should you use to switch between languages?",
@@ -1373,6 +1841,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You are designing an enterprise data warehouse in Azure Synapse Analytics that will store website traffic analytics in a star schema.\n\nYou plan to have a fact table for website visits. The table will be approximately 5 GB.\n\nYou need to recommend which distribution type and index type to use for the table. The solution must provide the fastest query performance.\n\nWhat should you recommend? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Stream Analytics job.\n\nYou need to ensure that the job has enough streaming units provisioned.\n\nYou configure monitoring of the SU % Utilization metric.\n\nWhich two additional metrics should you monitor? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -1427,6 +1901,12 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You have an Azure Data Lake Storage Gen2 account that contains a JSON file for customers. The file contains two attributes named FirstName and LastName.\n\nYou need to copy the data from the JSON file to an Azure Synapse Analytics table by using Azure Databricks. A new column must be created that concatenates the FirstName and LastName values.\n\nYou create the following components:\u2711 A destination table in Azure Synapse\u2711 An Azure Blob storage container\u2711 A service principalIn which order should you perform the actions? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure data factory named ADF1.\n\nYou currently publish all pipeline authoring changes directly to ADF1.\n\nYou need to implement version control for the changes made to pipeline artifacts. The solution must ensure that you can apply version control to the resources currently defined in the UX Authoring canvas for ADF1.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -1441,6 +1921,18 @@
       "From the UX Authoring canvas, select Set up code repository.",
       "Create a Git repository."
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure Synapse Analytics workspace named workspace1. Workspace1 connects to an Azure DevOps repository named repo1. Repo1 contains a collaboration branch named main and a development branch named branch1. Branch1 contains an Azure Synapse pipeline named pipeline1.\n\nIn workspace1, you complete testing of pipeline1.\n\nYou need to schedule pipeline1 to run daily at 6 AM.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named Pool1 and an Azure Data Lake Storage account named storage1. Storage1 requires secure transfers.\n\nYou need to create an external data source in Pool1 that will be used to read .orc files in storage1.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named SQLPool1.\n\nSQLPool1 is currently paused.\n\nYou need to restore the current state of SQLPool1 to a new SQL pool.\n\nWhat should you do first?",
@@ -1508,6 +2000,12 @@
     "site_answers": [
       "offset: \"-01:00:00\" size: \"01:00:00\""
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics pipeline named Pipeline1 that contains a data flow activity named Dataflow1.\n\nPipeline1 retrieves files from an Azure Data Lake Storage Gen 2 account named storage1.\n\nDataflow1 uses the AutoResolveIntegrationRuntime integration runtime configured with a core count of 128.\n\nYou need to optimize the number of cores used by Dataflow1 to accommodate the size of the files in storage1.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou plan to create an Azure Databricks workspace that has a tiered structure. The workspace will contain the following three workloads:\u2711 A workload for data engineers who will use Python and SQL.\u2711 A workload for jobs that will run notebooks that use Python, Scala, and SQL.\u2711 A workload that data scientists will use to perform ad hoc analysis in Scala and R.\n\nThe enterprise architecture team at your company identifies the following standards for Databricks environments:\u2711 The data engineers must share a cluster.\u2711 The job cluster will be managed by using a request process whereby data scientists and data engineers provide packaged notebooks for deployment to the cluster.\u2711 All the data scientists must be assigned their own cluster that terminates automatically after 120 minutes of inactivity. Currently, there are three data scientists.\n\nYou need to create the Databricks clusters for the workloads.\n\nSolution: You create a Standard cluster for each data scientist, a High Concurrency cluster for the data engineers, and a Standard cluster for the jobs.\n\nDoes this meet the goal?",
@@ -1586,6 +2084,12 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure Databricks workspace. The workspace contains a notebook named Notebook1.\n\nIn Notebook1, you create an Apache Spark DataFrame named df_sales that contains the following columns:\u2022\tCustomer\u2022\tSalesPerson\u2022\tRegion\u2022\tAmountYou need to identify the three top performing salespersons by amount for a region named HQ.\n\nHow should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You need to schedule an Azure Data Factory pipeline to execute when a new file arrives in an Azure Data Lake Storage Gen2 container.\n\nWhich type of trigger should you use?",
     "question_type": "single",
     "choices": [
@@ -1597,6 +2101,12 @@
     "site_answers": [
       "storage event"
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You have a project in Azure DevOps that contains a repository named Repo1. Repo1 contains a branch named main.\n\nYou create a new Azure Synapse workspace named Workspace1.\n\nYou need to create data processing pipelines in Workspace1. The solution must meet the following requirements:\u2022\tPipeline artifacts must be stored in Repo1\u2022\tSource control must be provided for pipeline artifacts.\u2022\tAll development must be performed in a feature branch.\n\nWhich four actions should you perform in sequence in Synapse Studio? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure subscription that contains an Azure SQL database named DB1 and a storage account named storage1. The storage1 account contains a file named File1.txt. File1.txt contains the names of selected tables in DB1.\n\nYou need to use an Azure Synapse pipeline to copy data from the selected tables in DB1 to the files in storage1. The solution must meet the following requirements:\u2022\tThe Copy activity in the pipeline must be parameterized to use the data in File1.txt to identify the source and destination of the copy.\u2022\tCopy activities must occur in parallel as often as possible.\n\nWhich two pipeline activities should you include in the pipeline? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -1652,6 +2162,30 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Blob storage account that contains a folder. The folder contains 120,000 files. Each file contains 62 columns.\n\nEach day, 1,500 new files are added to the folder.\n\nYou plan to incrementally load five data columns from each new file into an Azure Synapse Analytics workspace.\n\nYou need to minimize how long it takes to perform the incremental loads.\n\nWhat should you use to store the files and in which format? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You are batch loading a table in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to load data from a staging table to the target table. The solution must ensure that if an error occurs while loading the data to the target table, all the inserts in that batch are undone.\n\nHow should you complete the Transact-SQL code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have two Azure SQL databases named DB1 and DB2.\n\nDB1 contains a table named Table1. Table1 contains a timestamp column named LastModifiedOn. LastModifiedOn contains the timestamp of the most recent update for each individual row.\n\nDB2 contains a table named Watermark. Watermark contains a single timestamp column named WatermarkValue.\n\nYou plan to create an Azure Data Factory pipeline that will incrementally upload into Azure Blob Storage all the rows in Table1 for which the LastModifiedOn column contains a timestamp newer than the most recent value of the WatermarkValue column in Watermark.\n\nYou need to identify which activities to include in the pipeline. The solution must meet the following requirements:\u2022\tMinimize the effort to author the pipeline.\u2022\tEnsure that the number of data integration units allocated to the upload operation can be controlled.\n\nWhat should you identify? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse serverless SQL pool.\n\nYou need to read JSON documents from a file by using the OPENROWSET function.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You use Azure Data Factory to create data pipelines.\n\nYou are evaluating whether to integrate Data Factory and GitHub for source and version control.\n\nWhat are two advantages of the integration? Each correct answer presents a complete solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -1664,6 +2198,12 @@
       "the ability to save without publishing",
       "the ability to save pipelines that have validation issues"
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Synapse Analytics workspace named Workspace1.\n\nYou perform the following changes:\u2022\tImplement source control for Workspace1.\u2022\tCreate a branch named Feature based on the collaboration branch.\u2022\tSwitch to the Feature branch.\u2022\tModify Workspace1.\n\nYou need to publish the changes to Azure Synapse.\n\nFrom which branch should you perform each change? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have two Azure Blob Storage accounts named account1 and account2.\n\nYou plan to create an Azure Data Factory pipeline that will use scheduled intervals to replicate newly created or modified blobs from account1 to account2.\n\nYou need to recommend a solution to implement the pipeline. The solution must meet the following requirements:\u2022\tEnsure that the pipeline only copies blobs that were created or modified since the most recent replication event.\u2022\tMinimize the effort to create the pipeline.\n\nWhat should you recommend?",
@@ -1691,6 +2231,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Synapse Analytics workspace named workspace1. Workspace1 contains a dedicated SQL pool named SQLPool1 and an Apache Spark pool named sparkpool1. Sparkpool1 contains a DataFrame named pyspark_df.\n\nYou need to write the contents of pyspark_df to a table in SQLPool1 by using a PySpark notebook.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure data factory named ADF1 and an Azure Synapse Analytics workspace that contains a pipeline named SynPipeLine1. SynPipeLine1 includes a Notebook activity.\n\nYou create a pipeline in ADF1 named ADFPipeline1.\n\nYou need to invoke SynPipeLine1 from ADFPipeline1.\n\nWhich type of activity should you use?",
     "question_type": "single",
     "choices": [
@@ -1702,6 +2248,18 @@
     "site_answers": [
       "Web"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure data factory that contains the linked service shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct answer is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -In Azure Data Factory, you have a schedule trigger that is scheduled in Pacific Time.\n\nPacific Time observes daylight saving time.\n\nThe trigger has the following JSON file.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a pipeline that will execute a stored procedure in the dedicated SQL pool and use the returned result set as the input for a downstream activity. The solution must minimize development effort.\n\nWhich type of activity should you use in the pipeline?",
@@ -1785,6 +2343,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have Azure Data Factory configured with Azure Repos Git integration. The collaboration branch and the publish branch are set to the default values.\n\nYou have a pipeline named pipeline1.\n\nYou build a new version of pipeline1 in a branch named feature1.\n\nFrom the Data Factory Studio, you select Publish.\n\nThe source code of which branch will be built, and which branch will contain the output of the Azure Resource Manager (ARM) template? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure data factory.\n\nYou are editing an Azure Data Factory activity JSON.\n\nThe script needs to copy a file from Azure Blob Storage to multiple destinations. The solution must ensure that the source and destination files have consistent folder paths.\n\nHow should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are building a data flow in Azure Data Factory that upserts data into a table in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to add a transformation to the data flow. The transformation must specify logic indicating when a row from the input data must be upserted into the sink.\n\nWhich type of transformation should you add to the data flow?",
     "question_type": "single",
     "choices": [
@@ -1836,6 +2406,36 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You have an Azure Data Lake Storage account named account1.\n\nYou use an Azure Synapse Analytics serverless SQL pool to access sales data stored in account1.\n\nYou need to create a bar chart that displays sales by product. The solution must minimize development effort.\n\nIn which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a copy of the data warehouse and make the copy available for 28 days. The solution must minimize costs.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics workspace that contains an Apache Spark pool named Pool1.\n\nYou need to read data from a CSV file and write the data to a Delta table by using Pool1.\n\nHow should you complete the PySpark code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage account that contains one CSV file per hour for January 1, 2020, through January 31, 2023. The files are partitioned by using the following folder structure.\n\nYou need to query the files by using an Azure Synapse Analytics serverless SQL pool. The solution must return the row count of each file created during the last three months of 2022.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool named Pool1 that contains an external table named Sales. Sales contains sales data. Each row in Sales contain data on a single sale, including the name of the salesperson.\n\nYou need to implement row-level security (RLS). The solution must ensure that the salespeople can access only their respective sales.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Data Factory pipeline named P1.\n\nYou need to schedule P1 to run at 10:15 AM, 12:15 PM, 2:15 PM, and 4:15 PM every day.\n\nWhich frequency and interval should you configure for the scheduled trigger?",
     "question_type": "single",
     "choices": [
@@ -1862,6 +2462,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics workspace that contains three pipelines and three triggers named Trigger1, Trigger2, and Trigger3.\n\nTrigger3 has the following definition.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Databricks deployment and a local file named /tmp/file1 that contains the following code.\n\nYou need to read /tmp/file1 into a data frame by using Scala.\n\nHow should you complete the code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure subscription that contains a Microsoft Purview account.\n\nYou need to search the Microsoft Purview Data Catalog to identify assets that have an assetType property of Table or View.\n\nWhich query should you run?",
     "question_type": "single",
     "choices": [
@@ -1873,6 +2485,18 @@
     "site_answers": [
       "assetType:Table OR assetType:view"
     ]
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Active Directory (Azure AD) tenant that contains a security group named Group1. You have an Azure Synapse Analytics dedicated SQL pool named dw1 that contains a schema named schema1.\n\nYou need to grant Group1 read-only permissions to all the tables and views in schema1. The solution must use the principle of least privilege.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains a logical Microsoft SQL server named Server1. Server1 hosts an Azure Synapse Analytics SQL dedicated pool named Pool1.\n\nYou need to recommend a Transparent Data Encryption (TDE) solution for Server1. The solution must meet the following requirements:\u2711 Track the usage of encryption keys.\n\nMaintain the access of client apps to Pool1 in the event of an Azure datacenter outage that affects the availability of the encryption keys.\n\nWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You plan to create an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to minimize the time it takes to identify queries that return confidential information as defined by the company's data privacy regulations and the users who executed the queues.\n\nWhich two components should you include in the solution? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -1944,6 +2568,24 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Data Lake Storage account. The storage account contains a data lake named DataLake1.\n\nYou plan to use an Azure data factory to ingest data from a folder in DataLake1, transform the data, and land the data in another folder.\n\nYou need to ensure that the data factory can read and write data from any folder in the DataLake1 container. The solution must meet the following requirements:\u2022\tMinimize the risk of unauthorized user access.\u2022\tUse the principle of least privilege.\u2022\tMinimize maintenance effort.\n\nHow should you configure access to the storage account for the data factory? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are designing an Azure Synapse Analytics dedicated SQL pool.\n\nGroups will have access to sensitive data in the pool as shown in the following table.\n\nYou have policies for the sensitive data. The policies vary be region as shown in the following table.\n\nYou have a table of patients for each region. The tables contain the following potentially sensitive columns.\n\nYou are designing dynamic data masking to maintain compliance.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Synapse Analytics SQL pool named Pool1 on a logical Microsoft SQL server named Server1.\n\nYou need to implement Transparent Data Encryption (TDE) on Pool1 by using a custom key named key1.\n\nWhich five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have a data warehouse in Azure Synapse Analytics.\n\nYou need to ensure that the data in the data warehouse is encrypted at rest.\n\nWhat should you enable?",
     "question_type": "single",
     "choices": [
@@ -1980,6 +2622,12 @@
     "site_answers": [
       "REPLICATE"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You develop a dataset named DBTBL1 by using Azure Databricks.\n\nDBTBL1 contains the following columns:\u2711 SensorTypeID\u2711 GeographyRegionID\u2711 Year\u2711 Month\u2711 Day\u2711 Hour\u2711 Minute\u2711 Temperature\u2711 WindSpeed\u2711 OtherYou need to store the data to support daily incremental load pipelines that vary for each GeographyRegionID. The solution must minimize storage costs.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You are designing a security model for an Azure Synapse Analytics dedicated SQL pool that will support multiple companies.\n\nYou need to ensure that users from each company can view only the data of their respective company.\n\nWhich two objects should you include in the solution? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -2023,6 +2671,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics SQL pool named Pool1. In Azure Active Directory (Azure AD), you have a security group named Group1.\n\nYou need to control the access of Group1 to specific columns and rows in a table in Pool1.\n\nWhich Transact-SQL commands should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You need to implement an Azure Databricks cluster that automatically connects to Azure Data Lake Storage Gen2 by using Azure Active Directory (Azure AD) integration.\n\nHow should you configure the new cluster? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You are designing an Azure Synapse solution that will provide a query interface for the data stored in an Azure Storage account. The storage account is only accessible from a virtual network.\n\nYou need to recommend an authentication mechanism to ensure that the solution can access the source data.\n\nWhat should you recommend?",
     "question_type": "single",
     "choices": [
@@ -2046,6 +2706,12 @@
     "site_answers": [
       "shared access signatures (SAS)"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You use Azure Data Lake Storage Gen2 to store data that data scientists and data engineers will query by using Azure Databricks interactive notebooks. Users will have access only to the Data Lake Storage folders that relate to the projects on which they work.\n\nYou need to recommend which authentication methods to use for Databricks and Data Lake Storage to provide the users with the appropriate access. The solution must minimize administrative effort and development effort.\n\nWhich authentication method should you recommend for each Azure service? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool that contains a table named Contacts. Contacts contains a column named Phone.\n\nYou need to ensure that users in a specific role only see the last four digits of a phone number when querying the Phone column.\n\nWhat should you include in the solution?",
@@ -2091,6 +2757,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure subscription that is linked to a hybrid Azure Active Directory (Azure AD) tenant. The subscription contains an Azure Synapse Analytics SQL pool named Pool1.\n\nYou need to recommend an authentication solution for Pool1. The solution must support multi-factor authentication (MFA) and database-level authentication.\n\nWhich authentication solution or solutions should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure data factory.\n\nYou need to ensure that pipeline-run data is retained for 120 days. The solution must ensure that you can query the data by using the Kusto query language.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to ensure that data in the pool is encrypted at rest. The solution must NOT require modifying applications that query the data.\n\nWhat should you do?",
     "question_type": "single",
     "choices": [
@@ -2104,6 +2782,36 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure Data Lake Storage Gen2 account named storage1. Storage1 contains a container named container1.\n\nContainer1 contains a directory named directory1. Directory1 contains a file named file1.\n\nYou have an Azure Active Directory (Azure AD) user named User1 that is assigned the Storage Blob Data Reader role for storage1.\n\nYou need to ensure that User1 can append data to file1. The solution must use the principle of least privilege.\n\nWhich permissions should you grant? To answer, drag the appropriate permissions to the correct resources. Each permission may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Databricks workspace named databricks1 and an Azure Synapse Analytics workspace named synapse1.\n\nThe synapse1 workspace contains an Apache Spark pool named pool1.\n\nYou need to share an Apache Hive catalog of pool1 with databricks1.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure subscription.\n\nYou need to deploy an Azure Data Lake Storage Gen2 Premium account. The solution must meet the following requirements:* Blobs that are older than 365 days must be deleted.* Administrative effort must be minimized.* Costs must be minimized.\n\nWhat should you use? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You are designing an application that will use an Azure Data Lake Storage Gen 2 account to store petabytes of license plate photos from toll booths. The account will use zone-redundant storage (ZRS).\n\nYou identify the following usage patterns:* The data will be accessed several times a day during the first 30 days after the data is created. The data must meet an availability SLA of 99.9%.* After 90 days, the data will be accessed infrequently but must be available within 30 seconds.* After 365 days, the data will be accessed infrequently but must be available within five minutes.\n\nYou need to recommend a data retention solution. The solution must minimize costs.\n\nWhich access tier should you recommend for each time frame? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "DRAG DROP -You have an Azure Data Lake Storage Gen 2 account named storage1.\n\nYou need to recommend a solution for accessing the content in storage1. The solution must meet the following requirements:\u2022\tList and read permissions must be granted at the storage account level.\u2022\tAdditional permissions can be applied to individual objects in storage1.\u2022\tSecurity principals from Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra, must be used for authentication.\n\nWhat should you use? To answer, drag the appropriate components to the correct requirements. Each component may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool named Pool1 that contains a table named Sales.\n\nSales has row-level security (RLS) applied. RLS uses the following predicate filter.\n\nA user named SalesUser1 is assigned the db_datareader role for Pool1.\n\nWhich rows in the Sales table are returned when SalesUser1 queries the table?",
     "question_type": "single",
     "choices": [
@@ -2115,6 +2823,12 @@
     "site_answers": [
       "only the rows for which the value in the SalesRep column is SalesUser1"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 account named account1 that contains the resources shown in the following table.\n\nYou need to configure access control lists (ACLs) to allow a user named User1 to delete File1. User1 is NOT assigned any role-based access control (RBAC) roles for account1. The solution must use the principle of least privilege.\n\nWhich type of ACL should you configure for each resource? To answer select the appropriate options in the answer area.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure subscription that is linked to a tenant in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra. The tenant that contains a security group named Group1. The subscription contains an Azure Data Lake Storage account named myaccount1. The myaccount1 account contains two containers named container1 and container2.\n\nYou need to grant Group1 read access to container1. The solution must use the principle of least privilege.\n\nWhich role should you assign to Group1?",
@@ -2141,6 +2855,12 @@
     "site_answers": [
       "column-level security"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool that hosts a database named DB1.\n\nYou need to ensure that DB1 meets the following security requirements:\u2022\tWhen credit card numbers show in applications, only the last four digits must be visible.\u2022\tTax numbers must be visible only to specific users.\n\nWhat should you use for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure subscription that contains a storage account named storage1 and an Azure Synapse Analytics dedicated SQL pool. The storage1 account contains a CSV file that requires an account key for access.\n\nYou plan to read the contents of the CSV file by using an external table.\n\nYou need to create an external data source for the external table.\n\nWhat should you create first?",
@@ -2314,6 +3034,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You need to collect application metrics, streaming query events, and application log messages for an Azure Databrick cluster.\n\nWhich type of library and workspace should you implement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have a SQL pool in Azure Synapse.\n\nYou discover that some queries fail or take a long time to complete.\n\nYou need to monitor for transactions that have rolled back.\n\nWhich dynamic management view should you query?",
     "question_type": "single",
     "choices": [
@@ -2474,6 +3200,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Data Factory pipeline that has the activities shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have several Azure Data Factory pipelines that contain a mix of the following types of activities:\u2711 Wrangling data flow\u2711 Notebook\u2711 Copy\u2711 JarWhich two Azure services should you use to debug the activities? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point",
     "question_type": "multiple",
     "choices": [
@@ -2578,6 +3310,18 @@
     "site_answers": [
       "Azure Stream Analytics cloud job using Azure Portal"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure event hub named retailhub that has 16 partitions. Transactions are posted to retailhub. Each transaction includes the transaction ID, the individual line items, and the payment details. The transaction ID is used as the partition key.\n\nYou are designing an Azure Stream Analytics job to identify potentially fraudulent transactions at a retail store. The job will use retailhub as the input. The job will output the transaction ID, the individual line items, the payment details, a fraud score, and a fraud indicator.\n\nYou plan to send the output to an Azure event hub named fraudhub.\n\nYou need to ensure that the fraud detection solution is highly scalable and processes transactions as quickly as possible.\n\nHow should you structure the output of the Stream Analytics job? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an on-premises data warehouse that includes the following fact tables. Both tables have the following columns: DateKey, ProductKey, RegionKey.\n\nThere are 120 unique product keys and 65 unique region keys.\n\nQueries that use the data warehouse take a long time to complete.\n\nYou plan to migrate the solution to use Azure Synapse Analytics. You need to ensure that the Azure-based solution optimizes query performance and minimizes processing skew.\n\nWhat should you recommend? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one pointHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have a partitioned table in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to design queries to maximize the benefits of partition elimination.\n\nWhat should you include in the Transact-SQL queries?",
@@ -2688,6 +3432,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to monitor the database for long-running queries and identify which queries are waiting on resources.\n\nWhich dynamic management view should you use for each requirement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct answer is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure Data Factory pipeline named pipeline1 that includes a Copy activity named Copy1. Copy1 has the following configurations:\u2022\tThe source of Copy1 is a table in an on-premises Microsoft SQL Server instance that is accessed by using a linked service connected via a self-hosted integration runtime.\u2022\tThe sink of Copy1 uses a table in an Azure SQL database that is accessed by using a linked service connected via an Azure integration runtime.\n\nYou need to maximize the amount of compute resources available to Copy1. The solution must minimize administrative effort.\n\nWhat should you do?",
     "question_type": "single",
     "choices": [
@@ -2740,6 +3490,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure data factory named DF1 that contains 10 pipelines.\n\nThe pipelines are executed hourly by using a schedule trigger. All activities are executed on an Azure integration runtime.\n\nYou need to ensure that you can identify trends in queue times across the pipeline executions and activities The solution must minimize administrative effort.\n\nHow should you configure the Diagnostic settings for DF1? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You manage an enterprise data warehouse in Azure Synapse Analytics.\n\nUsers report slow performance when they run commonly used queries. Users do not report performance changes for infrequently used queries.\n\nYou need to monitor resource utilization to determine the source of the performance issues.\n\nWhich metric should you monitor?",
     "question_type": "single",
     "choices": [
@@ -2751,6 +3507,18 @@
     "site_answers": [
       "Cache hit percentage"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure subscription that contains the resources shown in the following table.\n\nYou need to ensure that you can run Spark notebooks in ws1.\n\nThe solution must ensure that you can retrieve secrets from kv1 by using UAMI1.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Data Factory pipeline shown in the following exhibit.\n\nThe execution log for the first pipeline run is shown in the following exhibit.\n\nThe execution log for the second pipeline run is shown in the following exhibit.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool named Pool1. Pool1 contains a fact table named Table1.\n\nYou need to identify the extent of the data skew in Table1.\n\nWhat should you do in Synapse Studio?",
@@ -2820,6 +3588,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure data factory.\n\nYou execute a pipeline that contains an activity named Activity1. Activity1 produces the following output.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You manage an enterprise data warehouse in Azure Synapse Analytics.\n\nUsers report slow performance when they run commonly used queries. Users do not report performance changes for infrequently used queries.\n\nYou need to monitor resource utilization to determine the source of the performance issues.\n\nWhich metric should you monitor?",
     "question_type": "single",
     "choices": [
@@ -2861,6 +3635,12 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool that contains a table named Sales.\n\nOrders. Sales.\n\nOrders contains a column named SalesRep.\n\nYou plan to implement row-level security (RLS) for Sales.\n\nOrders.\n\nYou need to create the security policy that will be used to implement RLS. The solution must ensure that sales representatives only see rows for which the value of the SalesRep column matches their username.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "You have an Azure data factory named DF1. DF1 contains a single pipeline that is executed by using a schedule trigger.\n\nFrom Diagnostics settings, you configure pipeline runs to be sent to a resource-specific destination table in a Log Analytics workspace.\n\nYou need to run KQL queries against the table.\n\nWhich table should you query?",
     "question_type": "single",
     "choices": [
@@ -2872,6 +3652,12 @@
     "site_answers": [
       "ADFPipelineRun"
     ]
+  },
+  {
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool named sqlpool1 that contains a table named Sales1.\n\nEach row in the Sales table contains regional sales data and a field that lists the username of a sales analyst.\n\nYou need to configure row-level security (RLS) to ensure that the analysts can view only the rows containing their respective data.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "You have an Azure subscription that contains an Azure Synapse workspace named WS1 and an Azure Monitor action group named Group1. WS1 has a dedicated SQL pool.\n\nYou plan to archive monitoring data for integration activity runs.\n\nYou need to ensure that you can configure custom alerts based on the archived data that will execute Group1. The solution must minimize administrative effort.\n\nWhich diagnostic setting should you select?",
@@ -2954,6 +3740,24 @@
     ]
   },
   {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            HOTSPOT -You need to design a data storage structure for the product sales transactions. The solution must meet the sales transaction dataset requirements.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            DRAG DROP -You need to ensure that the Twitter feed data can be analyzed in the dedicated SQL pool. The solution must meet the customer sentiment analytics requirements.\n\nWhich three Transact-SQL DDL commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            HOTSPOT -You need to design the partitions for the product sales transactions. The solution must meet the sales transaction dataset requirements.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            You need to implement the surrogate key for the retail store table. The solution must meet the sales transaction dataset requirements.\n\nWhat should you create?",
     "question_type": "single",
     "choices": [
@@ -2967,6 +3771,18 @@
     ]
   },
   {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            HOTSPOT -You need to design an analytical storage solution for the transactional data. The solution must meet the sales transaction dataset requirements.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            HOTSPOT -You need to implement an Azure Synapse Analytics database object for storing the sales transactions data. The solution must meet the sales transaction dataset requirements.\n\nWhat should you do? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
     "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            You need to design a data retention solution for the Twitter feed data records. The solution must meet the customer sentiment analytics requirements.\n\nWhich Azure Storage functionality should you include in the solution?",
     "question_type": "single",
     "choices": [
@@ -2978,6 +3794,24 @@
     "site_answers": [
       "lifecycle management"
     ]
+  },
+  {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Litware, Inc. owns and operates 300 convenience stores across the US. The company sells a variety of packaged foods and drinks, as well as a variety of prepared foods, such as sandwiches and pizzas.\n\nLitware has a loyalty club whereby members can get daily discounts on specific items by providing their membership number at checkout.\n\nLitware employs business analysts who prefer to analyze data by using Microsoft Power BI, and data scientists who prefer analyzing data in Azure Databricks notebooks.\n\nRequirements -Business Goals -Litware wants to create a new analytics environment in Azure to meet the following requirements: See inventory levels across the stores. Data must be updated as close to real time as possible. Execute ad hoc analytical queries on historical data to identify whether the loyalty club discounts increase sales of the discounted products. Every four hours, notify store employees about how many prepared food items to produce based on historical demand from the sales data.\n\nTechnical Requirements -Litware identifies the following technical requirements: Minimize the number of different Azure services needed to achieve the business goals. Use platform as a service (PaaS) offerings whenever possible and avoid having to provision virtual machines that must be managed by Litware. Ensure that the analytical data store is accessible only to the company's on-premises network and Azure services. Use Azure Active Directory (Azure AD) authentication whenever possible. Use the principle of least privilege when designing security. Stage Inventory data in Azure Data Lake Storage Gen2 before loading the data into the analytical data store. Litware wants to remove transient data from DataLake Storage once the data is no longer in use. Files that have a modified date that is older than 14 days must be removed. Limit the business analysts' access to customer contact information, such as phone numbers, because this type of data is not analytically relevant. Ensure that you can quickly restore a copy of the analytical data store within one hour in the event of corruption or accidental deletion.\n\nPlanned Environment -Litware plans to implement the following environment: The application development team will create an Azure event hub to receive real-time sales data, including store number, date, time, product ID, customer loyalty number, price, and discount amount, from the point of sale (POS) system and output the data to data storage in Azure. Customer data, including name, contact information, and loyalty number, comes from Salesforce, a SaaS application, and can be imported into Azure once every eight hours. Row modified dates are not trusted in the source table. Product data, including product ID, name, and category, comes from Salesforce and can be imported into Azure once every eight hours. Row modified dates are not trusted in the source table. Daily inventory data comes from a Microsoft SQL server located on a private network. Litware currently has 5 TB of historical sales data and 100 GB of customer data. The company expects approximately 100 GB of new data per month for the next year. Litware will build a custom application named FoodPrep to provide store employees with the calculation results of how many prepared food items to produce every four hours. Litware does not plan to implement Azure ExpressRoute or a VPN between the on-premises network and Azure.\n                                            Question\n                                        \n                                        \n                                            HOTSPOT -Which Azure Data Factory components should you recommend using together to import the daily inventory data from the SQL server to Azure Data Lake Storage?To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            DRAG DROP -You need to implement versioned changes to the integration pipelines. The solution must meet the data integration requirements.\n\nIn which order should you perform the actions? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
+  },
+  {
+    "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Contoso, Ltd. is a clothing retailer based in Seattle. The company has 2,000 retail stores across the United States and an emerging online presence.\n\nThe network contains an Active Directory forest named contoso.com. The forest it integrated with an Azure Active Directory (Azure AD) tenant named contoso.com. Contoso has an Azure subscription associated to the contoso.com Azure AD tenant.\n\nExisting Environment -Transactional Data -Contoso has three years of customer, transactional, operational, sourcing, and supplier data comprised of 10 billion records stored across multiple on-premisesMicrosoft SQL Server servers. The SQL Server instances contain data from various operational systems. The data is loaded into the instances by using SQLServer Integration Services (SSIS) packages.\n\nYou estimate that combining all product sales transactions into a company-wide sales transactions dataset will result in a single table that contains 5 billion rows, with one row per transaction.\n\nMost queries targeting the sales transactions data will be used to identify which products were sold in retail stores and which products were sold online during different time periods. Sales transaction data that is older than three years will be removed monthly.\n\nYou plan to create a retail store table that will contain the address of each retail store. The table will be approximately 2 MB. Queries for retail store sales will include the retail store addresses.\n\nYou plan to create a promotional table that will contain a promotion ID. The promotion ID will be associated to a specific product. The product will be identified by a product ID. The table will be approximately 200 GB.\n\nStreaming Twitter Data -The ecommerce department at Contoso develops an Azure logic app that captures trending Twitter feeds referencing the company's products and pushes the products to Azure Event Hubs.\n\nPlanned Changes and RequirementsPlanned Changes -Contoso plans to implement the following changes: Load the sales transaction dataset to Azure Synapse Analytics. Integrate on-premises data stores with Azure Synapse Analytics by using SSIS packages. Use Azure Synapse Analytics to analyze Twitter feeds to assess customer sentiments about products.\n\nSales Transaction Dataset RequirementsContoso identifies the following requirements for the sales transaction dataset: Partition data that contains sales transaction records. Partitions must be designed to provide efficient loads by month. Boundary values must belong to the partition on the right. Ensure that queries joining and filtering sales transaction records based on product ID complete as quickly as possible. Implement a surrogate key to account for changes to the retail store addresses. Ensure that data storage costs and performance are predictable. Minimize how long it takes to remove old records.\n\nCustomer Sentiment Analytics RequirementsContoso identifies the following requirements for customer sentiment analytics: Allow Contoso users to use PolyBase in an Azure Synapse Analytics dedicated SQL pool to query the content of the data records that host the Twitter feeds.\n\nData must be protected by using row-level security (RLS). The users must be authenticated by using their own Azure AD credentials. Maximize the throughput of ingesting Twitter feeds from Event Hubs to Azure Storage without purchasing additional throughput or capacity units. Store Twitter feeds in Azure Storage by using Event Hubs Capture. The feeds will be converted into Parquet files. Ensure that the data store supports Azure AD-based access control down to the object level.\n\nMinimize administrative effort to maintain the Twitter feed data records. Purge Twitter feed data records that are older than two years.\n\nData Integration Requirements -Contoso identifies the following requirements for data integration: Use an Azure service that leverages the existing SSIS packages to ingest on-premises data into datasets stored in a dedicated SQL pool of Azure SynapseAnalytics and transform the data. Identify a process to ensure that changes to the ingestion and transformation activities can be version-controlled and developed independently by multiple data engineers.\n                                            Question\n                                        \n                                        \n                                            HOTSPOT -You need to design a data ingestion and storage solution for the Twitter feeds. The solution must meet the customer sentiment analytics requirements.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_type": "multiple",
+    "choices": [],
+    "site_answers": []
   },
   {
     "question_text": "Introductory Info\n                                            Case study -This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.\n\nTo answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.\n\nAt the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.\n\nTo start the case study -To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.\n\nOverview -Litware, Inc. owns and operates 300 convenience stores across the US. The company sells a variety of packaged foods and drinks, as well as a variety of prepared foods, such as sandwiches and pizzas.\n\nLitware has a loyalty club whereby members can get daily discounts on specific items by providing their membership number at checkout.\n\nLitware employs business analysts who prefer to analyze data by using Microsoft Power BI, and data scientists who prefer analyzing data in Azure Databricks notebooks.\n\nRequirements -Business Goals -Litware wants to create a new analytics environment in Azure to meet the following requirements: See inventory levels across the stores. Data must be updated as close to real time as possible. Execute ad hoc analytical queries on historical data to identify whether the loyalty club discounts increase sales of the discounted products. Every four hours, notify store employees about how many prepared food items to produce based on historical demand from the sales data.\n\nTechnical Requirements -Litware identifies the following technical requirements: Minimize the number of different Azure services needed to achieve the business goals. Use platform as a service (PaaS) offerings whenever possible and avoid having to provision virtual machines that must be managed by Litware. Ensure that the analytical data store is accessible only to the company's on-premises network and Azure services. Use Azure Active Directory (Azure AD) authentication whenever possible. Use the principle of least privilege when designing security. Stage Inventory data in Azure Data Lake Storage Gen2 before loading the data into the analytical data store. Litware wants to remove transient data from DataLake Storage once the data is no longer in use. Files that have a modified date that is older than 14 days must be removed. Limit the business analysts' access to customer contact information, such as phone numbers, because this type of data is not analytically relevant. Ensure that you can quickly restore a copy of the analytical data store within one hour in the event of corruption or accidental deletion.\n\nPlanned Environment -Litware plans to implement the following environment: The application development team will create an Azure event hub to receive real-time sales data, including store number, date, time, product ID, customer loyalty number, price, and discount amount, from the point of sale (POS) system and output the data to data storage in Azure. Customer data, including name, contact information, and loyalty number, comes from Salesforce, a SaaS application, and can be imported into Azure once every eight hours. Row modified dates are not trusted in the source table. Product data, including product ID, name, and category, comes from Salesforce and can be imported into Azure once every eight hours. Row modified dates are not trusted in the source table. Daily inventory data comes from a Microsoft SQL server located on a private network. Litware currently has 5 TB of historical sales data and 100 GB of customer data. The company expects approximately 100 GB of new data per month for the next year. Litware will build a custom application named FoodPrep to provide store employees with the calculation results of how many prepared food items to produce every four hours. Litware does not plan to implement Azure ExpressRoute or a VPN between the on-premises network and Azure.\n                                            Question\n                                        \n                                        \n                                            What should you recommend to prevent users outside the Litware on-premises network from accessing the analytical data store?",
