@@ -55,7 +55,7 @@
   {
     "question_text": "HOTSPOT -You are planning the deployment of Azure Data Lake Storage Gen2.\n\nYou have the following two reports that will access the data lake:\u2711 Report1: Reads three columns from a file that contains 50 columns.\u2711 Report2: Queries a single record based on a timestamp.\n\nYou need to recommend in which format to store the data in the data lake to support the reports. The solution must minimize read times.\n\nWhat should you recommend for each report? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": ["R1 Avro", "R1 Parquet", "R1 CSV", "R1 TSV", "R2 Avro", "R2 Parquet", "R2 CSV", "R2 TSV",],
+    "choices": ["R1 Avro", "R1 Parquet", "R1 CSV", "R1 TSV", "R2 Avro", "R2 Parquet", "R2 CSV", "R2 TSV"],
     "site_answers": [
       "R1 Parquet", "R2 Avro"
     ]
@@ -134,10 +134,12 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool that contains the users shown in the following table.\n\nUser1 executes a query on the database, and the query returns the results shown in the following exhibit.\n\nUser1 is the only user who has access to the unmasked data.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool that contains the users shown in the following table.\n\nUser    Role\nUser1    Server Admin\nUser2    db_datereader\n\nUser1 executes a query on the database, and the query returns the results shown in the following exhibit.\n\n\n\nSELECT c.name,\n  tbl.name as table_name,\n  typ.name as datatype,\n  c.is_masked,\n  c.masking_runction\nFROM sys.masked_columns AS c\nINNER JOIN sys. tables AS tbl ON c. [object_id] = tbl. [object_id]\nINNER JOIN sys.types typ ON c.user_type_id = typ.user_type_id\nWHERE is_masked = 1;\n\nResults\n\nname         table_name   datatype  is_masked  masking_function\nBirthDate     DimCustomer  date      1          default ()\nGender        DimCustomer  nvarchar  1          default ()\nEmailAddress  DimCustomer  nvarchar  1          email ()\nYearlyIncome  DimCustomer  money     1          default ()\n\nUser1 is the only user who has access to the unmasked data.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\n\n\nWhen User2 queries the YearlyIncome column, the values returned will be X.\n\nWhen User1 queries the BirthDate column, the values returned will be Y.\n\n",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X a random number", "X the values stored in the database", "X XXXX", "X 0",
+      "Y a random date", "Y the values stored in the database", "Y XXXX","Y 1900-01-01"],
+    "site_answers": ["X 0", "Y the values stored in the database"]
   },
   {
     "question_text": "You have an enterprise data warehouse in Azure Synapse Analytics.\n\nUsing PolyBase, you create an external table named [Ext].[Items] to query Parquet files stored in Azure Data Lake Storage Gen2 without importing the data to the data warehouse.\n\nThe external table has three columns.\n\nYou discover that the Parquet files have a fourth column named ItemID.\n\nWhich command should you run to add the ItemID column to the external table?A.\n\nB.\n\nC.\n\nD.",
