@@ -144,14 +144,22 @@
   {
     "question_text": "You have an enterprise data warehouse in Azure Synapse Analytics.\n\nUsing PolyBase, you create an external table named [Ext].[Items] to query Parquet files stored in Azure Data Lake Storage Gen2 without importing the data to the data warehouse.\n\nThe external table has three columns.\n\nYou discover that the Parquet files have a fourth column named ItemID.\n\nWhich command should you run to add the ItemID column to the external table?A.\n\nB.\n\nC.\n\nD.",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "ALTER EXTERNAL TABLE [Ext] . [Items]\nADD [ItemID] int;",
+      "DROP EXTERNAL FILE FORMAT parquetfile1;\nCREATE EXTERNAL FILE FORMAT parquetfile1\nWITH (\nFORMAT_TYPE = PARQUET,\nnDATA_COMPRESSION = 'org. apache. hadoop. io. compress. SnappyCodec'",
+      "DROP EXTERNAL TABLE [Ext] . [Items]\nCREATE EXTERNAL TABLE [Ext] . [Items]\n( [ItemID] [int] NULL,\n[ItemName] nvarchar (50) NULL,\n[ItemType] nvarchar (20) NULL,\n[ItemDescription] nvarchar (250) )\nWITH (\nLOCATION= '/Items/' ,\nDATA_SOURCE = AzureDataLakeStore,\nFILE_FORMAT = PARQUET,\nREJECT_TYPE = VALUE,\nREJECT VALUE = 0 ) ;",
+      "ALTER TABLE [Ext] . [Items]\nADD [ItemID] int;"],
+    "site_answers": ["DROP EXTERNAL TABLE [Ext] . [Items]\nCREATE EXTERNAL TABLE [Ext] . [Items]\n( [ItemID] [int] NULL,\n[ItemName] nvarchar (50) NULL,\n[ItemType] nvarchar (20) NULL,\n[ItemDescription] nvarchar (250) )\nWITH (\nLOCATION= '/Items/' ,\nDATA_SOURCE = AzureDataLakeStore,\nFILE_FORMAT = PARQUET,\nREJECT_TYPE = VALUE,\nREJECT VALUE = 0 ) ;"]
   },
   {
-    "question_text": "HOTSPOT -You have two Azure Storage accounts named Storage1 and Storage2. Each account holds one container and has the hierarchical namespace enabled. The system has files that contain data stored in the Apache Parquet format.\n\nYou need to copy folders and files from Storage1 to Storage2 by using a Data Factory copy activity. The solution must meet the following requirements:\u2711 No transformations must be performed.\u2711 The original folder structure must be retained.\u2711 Minimize time required to perform the copy activity.\n\nHow should you configure the copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have two Azure Storage accounts named Storage1 and Storage2. Each account holds one container and has the hierarchical namespace enabled. The system has files that contain data stored in the Apache Parquet format.\n\nYou need to copy folders and files from Storage1 to Storage2 by using a Data Factory copy activity. The solution must meet the following requirements:\u2711 No transformations must be performed.\u2711 The original folder structure must be retained.\u2711 Minimize time required to perform the copy activity.\n\nHow should you configure the copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\n\nSource dataset type: X\nCopy activity copy behavior: Y\n",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X Binary",
+      "X Parquet",
+      "X Delimited text",
+      "Y FlattenHierarchy","Y MergeFiles", "Y PreserveHierarchy"],
+    "site_answers": ["X Parquet", "Y PreserveHierarchy"]
   },
   {
     "question_text": "You have an Azure Data Lake Storage Gen2 container that contains 100 TB of data.\n\nYou need to ensure that the data in the container is available for read workloads in a secondary region if an outage occurs in the primary region. The solution must minimize costs.\n\nWhich type of data redundancy should you use?",
@@ -180,13 +188,13 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You have a SQL pool in Azure Synapse.\n\nYou plan to load data from Azure Blob storage to a staging table. Approximately 1 million rows of data will be loaded daily. The table will be truncated before each daily load.\n\nYou need to create the staging table. The solution must minimize how long it takes to load the data to the staging table.\n\nHow should you configure the table? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have a SQL pool in Azure Synapse.\n\nYou plan to load data from Azure Blob storage to a staging table. Approximately 1 million rows of data will be loaded daily. The table will be truncated before each daily load.\n\nYou need to create the staging table. The solution must minimize how long it takes to load the data to the staging table.\n\nHow should you configure the table? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nDistribution X\nIndexing Y\nPartitioning Z",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["X Hash","X Replicated","X Round-robin","Y Clustered","Y Clustered columnstore","Y Heap","Z Date","Z None"],
+    "site_answers": ["X Round-robin","Y Heap","Z None"]
   },
   {
-    "question_text": "You are designing a fact table named FactPurchase in an Azure Synapse Analytics dedicated SQL pool. The table contains purchases from suppliers for a retail store. FactPurchase will contain the following columns.\n\nFactPurchase will have 1 million rows of data added daily and will contain three years of data.\n\nTransact-SQL queries similar to the following query will be executed daily.\n\nSELECT -SupplierKey, StockItemKey, IsOrderFinalized, COUNT(*)FROM FactPurchase -WHERE DateKey >= 20210101 -AND DateKey <= 20210131 -GROUP By SupplierKey, StockItemKey, IsOrderFinalizedWhich table distribution will minimize query times?",
+    "question_text": "You are designing a fact table named FactPurchase in an Azure Synapse Analytics dedicated SQL pool. The table contains purchases from suppliers for a retail store. FactPurchase will contain the following columns.\n\nName              Data type     Nullable\nPurchaseKey       Bigint        No\nDateKey           Int           No\nSupplierKey       Int           No\nStockItemKey      Int           No\nPurchaseOrderID   Int           Yes\nOrderedQuantity   Int           No\nOrderedOuters     Int           No\nReceivedOuters    Int           No\nPackage           Nvarchar(50)  No\nIsOrderFinalized  Bit           No\nLineageKey        Int           No\n\nFactPurchase will have 1 million rows of data added daily and will contain three years of data.\n\nTransact-SQL queries similar to the following query will be executed daily.\n\nSELECT -SupplierKey, StockItemKey, IsOrderFinalized, COUNT(*)FROM FactPurchase -WHERE DateKey >= 20210101 -AND DateKey <= 20210131 -GROUP By SupplierKey, StockItemKey, IsOrderFinalizedWhich table distribution will minimize query times?",
     "question_type": "single",
     "choices": [
       "replicated",
@@ -199,10 +207,10 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -From a website analytics system, you receive data extracts about user interactions such as downloads, link clicks, form submissions, and video plays.\n\nThe data contains the following columns.\n\nYou need to design a star schema to support analytical queries of the data. The star schema will contain four tables including a date dimension.\n\nTo which table should you add each column? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT \nFrom a website analytics system, you receive data extracts about user interactions such as downloads, link clicks, form submissions, and video plays.\n\nThe data contains the following columns.\n\nName               Sample value\nDate               15 Jan 2021\nEventCategory      Videos\nEventAction        Play\nEventLabel         Contoso Promotional\nChannelGrouping    Social\nTotalEvents        150\nUniqueEvents       120\nSessionWithEvents  99\n\nYou need to design a star schema to support analytical queries of the data. The star schema will contain four tables including a date dimension.\n\nTo which table should you add each column? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nEventCategory X\nChannelGrouping Y\nTotalEvents Z",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["X DimChannel","X DimDate","X DimEvent","X FactEvents","Y DimChannel","Y DimDate","Y DimEvent","Y FactEvents","Z DimChannel","Z DimDate","Z DimEvent","Z FactEvents"],
+    "site_answers": ["X DimEvent","Y DimChannel","Z FactEvents"]
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Storage account that contains 100 GB of files. The files contain rows of text and numerical values. 75% of the rows contain description data that has an average length of 1.1 MB.\n\nYou plan to copy the data from the storage account to an enterprise data warehouse in Azure Synapse Analytics.\n\nYou need to prepare the files to ensure that the data copies quickly.\n\nSolution: You convert the files to compressed delimited text files.\n\nDoes this meet the goal?",
@@ -290,10 +298,14 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You store files in an Azure Data Lake Storage Gen2 container. The container has the storage policy shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You store files in an Azure Data Lake Storage Gen2 container. The container has the storage policy shown in the following exhibit.\n\n\"rules\": [\n  \"enabled\": true,\n  \"name\": \"contosorule\",\n  \"type\": \"Lifecycle\",\n  \"definition\": {\n    \"actions\":\n      \"version\": \"delete\": \"daysAfterCreationGreaterThan\": 60\n      \"baseBlob\": \"tierToCool\": \"daysAfterModificationGreaterThan\": 30\n    \"filters\": {\n      \"blobTypes\": \"blockBlob\"\n      \"prefixMatch: \"container1/contoso\"\n]\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nThe files are XXX afeter 30 days.\nThe storage policy applies to YYY.",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X deleted from the container","X moved to archive storage","X moved to cool storage","X moved to hot storage",
+      "Y container1/contoso.csv","Y container1/docs/contoso.json","Y container1/mycontoso/contoso.csv"],
+    "site_answers": [
+      "X moved to cool storage", "Y container1/contoso.csv"
+    ]
   },
   {
     "question_text": "You are designing a financial transactions table in an Azure Synapse Analytics dedicated SQL pool. The table will have a clustered columnstore index and will include the following columns:\u2711 TransactionType: 40 million rows per transaction type\u2711 CustomerSegment: 4 million per customer segment\u2711 TransactionMonth: 65 million rows per monthAccountType: 500 million per account typeYou have the following query requirements:\u2711 Analysts will most commonly analyze transactions for a given month.\u2711 Transactions analysis will typically summarize transactions by transaction type, customer segment, and/or account typeYou need to recommend a partition strategy for the table to minimize query times.\n\nOn which column should you recommend partitioning the table?",
@@ -309,10 +321,14 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 account named account1 that stores logs as shown in the following table.\n\nYou do not expect that the logs will be accessed during the retention periods.\n\nYou need to recommend a solution for account1 that meets the following requirements:\u2711 Automatically deletes the logs at the end of each retention period\u2711 Minimizes storage costsWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 account named account1 that stores logs as shown in the following table.\n\nType             Designated retention period\nApplication      360 days\nInfrastructure  60 days\n\nYou do not expect that the logs will be accessed during the retention periods.\n\nYou need to recommend a solution for account1 that meets the following requirements:\u2711 Automatically deletes the logs at the end of each retention period\u2711 Minimizes storage costsWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nTo minimize storage costs: X\nTo delete logs automatically: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X Store the infrastructure logs and the application logs in the Archive access tier","X Store the infrastructure logs and the application logs in the Cool access tier",
+      "X Store the infrastructure logs in the Cool access tier and the application logs in the Archive access tier",
+      "Y Azure Data Factory pipelines","Y Azure Blob storage lifecycle management rules","Y Immutable Azure Blob storage time-based retention policies"
+    ],
+    "site_answers": ["X Store the infrastructure logs in the Cool access tier and the application logs in the Archive access tier","Y Azure Blob storage lifecycle management rules"]
   },
   {
     "question_text": "You plan to ingest streaming social media data by using Azure Stream Analytics. The data will be stored in files in Azure Data Lake Storage, and then consumed by using Azure Databricks and PolyBase in Azure Synapse Analytics.\n\nYou need to recommend a Stream Analytics data output format to ensure that the queries from Databricks and PolyBase against the files encounter the fewest possible errors. The solution must ensure that the files can be queried quickly and that the data type information is retained.\n\nWhat should you recommend?",
@@ -341,7 +357,7 @@
     ]
   },
   {
-    "question_text": "You are designing a slowly changing dimension (SCD) for supplier data in an Azure Synapse Analytics dedicated SQL pool.\n\nYou plan to keep a record of changes to the available fields.\n\nThe supplier data contains the following columns.\n\nWhich three additional columns should you add to the data to create a Type 2 SCD? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "question_text": "You are designing a slowly changing dimension (SCD) for supplier data in an Azure Synapse Analytics dedicated SQL pool.\n\nYou plan to keep a record of changes to the available fields.\n\nThe supplier data contains the following columns.\n\nName                   Description\nSupplierSystemID       Unique supplier ID in an enterprise resource planning (ERP) system\nSupplierName           Name of the supplier company\nSupplierAddress1       Address of the supplier company\nSupplierAddress2       Second address of the supplier company\nSupplierCity           City of the supplier company\nSupplierStateProvince  State or province of the supplier company\nSupplierCountry        Country of the supplier company\nSupplierPostalCode     Postal code of the supplier company\nSupplierDescription    Free-test description of the supplier company\nSupplierCategory       Category of goods provided by the supplier company\n\nWhich three additional columns should you add to the data to create a Type 2 SCD? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
       "surrogate primary key",
@@ -358,16 +374,23 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You have a Microsoft SQL Server database that uses a third normal form schema.\n\nYou plan to migrate the data in the database to a star schema in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to design the dimension tables. The solution must optimize read operations.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have a Microsoft SQL Server database that uses a third normal form schema.\n\nYou plan to migrate the data in the database to a star schema in an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to design the dimension tables. The solution must optimize read operations.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nTransform data for the dimension tables by: X\nFor the primary key columns in the dimension tables, use: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X Maintaining to a third normal form","X Normalizing to a fourth normal form","X Denormalizing to a second normal form",
+      "Y New IDENTITY columns","Y A new computed column","Y The business key column from the source sys"
+    ],
+    "site_answers": ["X Denormalizing to a second normal form","Y New IDENTITY columns"]
   },
   {
-    "question_text": "HOTSPOT -You plan to develop a dataset named Purchases by using Azure Databricks. Purchases will contain the following columns:\u2711 ProductID\u2711 ItemPrice\u2711 LineTotal\u2711 Quantity\u2711 StoreID\u2711 Minute\u2711 Month\u2711 HourYear -\u2711 DayYou need to store the data to support hourly incremental load pipelines that will vary for each Store ID. The solution must minimize storage costs.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You plan to develop a dataset named Purchases by using Azure Databricks. Purchases will contain the following columns:\u2711 ProductID\u2711 ItemPrice\u2711 LineTotal\u2711 Quantity\u2711 StoreID\u2711 Minute\u2711 Month\u2711 HourYear -\u2711 DayYou need to store the data to support hourly incremental load pipelines that will vary for each Store ID. The solution must minimize storage costs.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\n df.write.A(B).mode(\"append\").C",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "A bucketBy","A partitionBy","A range","sortBy",
+      "B (\"*\")", "B (\"StoreID\",\"Hour\")", "B (\"StoreID\",\"Year\",\"Month\",\"Day\"\"Hour\")",
+      "csv(\"/Purchases\")","json(\"/Purchases\")","parquet(\"/Purchases\")","saveAsTable(\"/Purchases\")", 
+    ],
+    "site_answers": ["A partitionBy", "B (\"StoreID\",\"Year\",\"Month\",\"Day\"\"Hour\")", "parquet(\"/Purchases\")"]
   },
   {
     "question_text": "You are designing a partition strategy for a fact table in an Azure Synapse Analytics dedicated SQL pool. The table has the following specifications:\u2711 Contain sales data for 20,000 products.\n\nUse hash distribution on a column named ProductID.\u2711 Contain 2.4 billion records for the years 2019 and 2020.\n\nWhich number of partition ranges provides optimal compression and performance for the clustered columnstore index?",
@@ -383,13 +406,15 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You are creating dimensions for a data warehouse in an Azure Synapse Analytics dedicated SQL pool.\n\nYou create a table by using the Transact-SQL statement shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are creating dimensions for a data warehouse in an Azure Synapse Analytics dedicated SQL pool.\n\nYou create a table by using the Transact-SQL statement shown in the following exhibit.\n\nCREATE TABLE [DBO] . [DimProduct] (\n  [ProductKey] [int] IDENTITY (1,1) NOT NULL,\n  [ProductSourceID] [int] NOT NULL,\n  [ProductName] [nvarchar] (100) NOT NULL,\n  [ProductNumber] [nvarchar] (25) NOT NULL,\n  [Color] [nvarchar] (15) NULL,\n  [Size] [nvarchar] (5) NULL,\n  [Weight] [decimal] (8, 2) NULL,\n  [ProductCategory] [nvarchar] (100) NULL,\n  [SellStartDate] [date] NOT NULL,\n  [SellEndDate] [date] NULL,\n  [RowInsertedDateTime] [datetime] NOT NULL,\n  [RowUpdatedDateTime] [datetime] NOT NULL,\n  [ETLAuditID] [int] NOT NULL\n)\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nDimproduct is a XXX SCD.\nTheProductKey column is YYY.",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X Type 0","X Type 1","X Type 2",
+      "Y a surrogate key","Y a business key","Y an audit column"],
+    "site_answers": ["X type 2", "Y a surrogate key"]
   },
   {
-    "question_text": "You are designing a fact table named FactPurchase in an Azure Synapse Analytics dedicated SQL pool. The table contains purchases from suppliers for a retail store. FactPurchase will contain the following columns.\n\nFactPurchase will have 1 million rows of data added daily and will contain three years of data.\n\nTransact-SQL queries similar to the following query will be executed daily.\n\nSELECT -SupplierKey, StockItemKey, COUNT(*)FROM FactPurchase -WHERE DateKey >= 20210101 -AND DateKey <= 20210131 -GROUP By SupplierKey, StockItemKeyWhich table distribution will minimize query times?",
+    "question_text": "You are designing a fact table named FactPurchase in an Azure Synapse Analytics dedicated SQL pool. The table contains purchases from suppliers for a retail store. FactPurchase will contain the following columns.\n\nName              Data type     Nullable\nPurchaseKey       Bigint        No\nDateKey           Int           No\nSupplierKey       Int           No\nStockItemKey      Int           No\nPurchaseOrderID   Int           Yes\nOrderedQuantity   Int           No\nOrderedOuters     Int           No\nReceivedOuters    Int           No\nPackage           Nvarchar(50)  No\nIsOrderFinalized  Bit           No\nLineageKey        Int           No\n\nFactPurchase will have 1 million rows of data added daily and will contain three years of data.\n\nTransact-SQL queries similar to the following query will be executed daily.\n\nSELECT -SupplierKey, StockItemKey, COUNT(*)FROM FactPurchase -WHERE DateKey >= 20210101 -AND DateKey <= 20210131 -GROUP By SupplierKey, StockItemKeyWhich table distribution will minimize query times?",
     "question_type": "single",
     "choices": [
       "replicated",
@@ -417,8 +442,18 @@
   {
     "question_text": "DRAG DROP -You need to build a solution to ensure that users can query specific files in an Azure Data Lake Storage Gen2 account from an Azure Synapse Analytics serverless SQL pool.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "Create an external file format object",
+      "Create an external data source",
+      "Create a query that uses Create Table as Select",
+      "Create a table",
+      "Create an external table"
+    ],
+    "site_answers": [
+      "Create an external data source",
+      "Create an external file format object",
+      "Create an external table"
+    ]
   },
   {
     "question_text": "You are designing a data mart for the human resources (HR) department at your company. The data mart will contain employee information and employee transactions.\n\nFrom a source system, you have a flat extract that has the following fields:\u2711 EmployeeIDFirstName -\u2711 LastName\u2711 Recipient\u2711 GrossAmount\u2711 TransactionID\u2711 GovernmentID\u2711 NetAmountPaid\u2711 TransactionDateYou need to design a star schema data model in an Azure Synapse Analytics dedicated SQL pool for the data mart.\n\nWhich two tables should you create? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -451,17 +486,37 @@
   {
     "question_text": "DRAG DROP -You have data stored in thousands of CSV files in Azure Data Lake Storage Gen2. Each file has a header row followed by a properly formatted carriage return (/ r) and line feed (/n).\n\nYou are implementing a pattern that batch loads the files daily into a dedicated SQL pool in Azure Synapse Analytics by using PolyBase.\n\nYou need to skip the header row when you import the files into the data warehouse. Before building the loading pattern, you need to prepare the required database objects in Azure Synapse Analytics.\n\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: Each correct selection is worth one pointSelect and Place:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "Create a database scoped credential that uses Azure Active Directory Application and a Service Principal Key",
+      "Create an external data source that uses the abfs location",
+      "Use CREATE EXTERNAL TABLE AS SELECT (CETAS) and configure the reject options to specify reject values or percentages",
+      "Create an external file format and set the First Row option"
+    ],
+    "site_answers": [
+      "Create an external data source that uses the abfs location",
+      "Create an external file format and set the First Row option",
+      "Use CREATE EXTERNAL TABLE AS SELECT (CETAS) and configure the reject options to specify reject values or percentages"
+    ]
   },
   {
-    "question_text": "HOTSPOT -You are building an Azure Synapse Analytics dedicated SQL pool that will contain a fact table for transactions from the first half of the year 2020.\n\nYou need to ensure that the table meets the following requirements:\u2711 Minimizes the processing time to delete data that is older than 10 years\u2711 Minimizes the I/O for queries that use year-to-date valuesHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are building an Azure Synapse Analytics dedicated SQL pool that will contain a fact table for transactions from the first half of the year 2020.\n\nYou need to ensure that the table meets the following requirements:\u2711 Minimizes the processing time to delete data that is older than 10 years\u2711 Minimizes the I/O for queries that use year-to-date valuesHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nCREATE TABLE [dbo] . [FactTransaction]\n(\n[TransactionTypeID] int   NOT NULL,\n[TransactionDateID] int   NOT NULL,\n[CustomerID]        int   NOT NULL,\n[RecipientID]       int   NOT NULL,\n[Amount]            money NOT NULL\n)\nWITH (X (Y  RANGE RIGHT FOR VALUES (20200101, 20200201, 20200301, 20200401, 20200501, 20200601)))",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X CLUSTERED COLUMNSTORE INDE",
+      "X DISTRIBUTION",
+      "X PARTITION",
+      "X TRUNCATE_TARGET",
+      "Y [TransactionDateID]",
+      "Y [TransactionDateID], [TransactionTypeID]",
+      "Y HASH ( [TransactionTypeID])",
+      "Y ROUND ROBIN"
+    ],
+    "site_answers": [
+      "X PARTITION", "Y [TransactionDataID]"
+    ]
   },
   {
-    "question_text": "You are performing exploratory analysis of the bus fare data in an Azure Data Lake Storage Gen2 account by using an Azure Synapse Analytics serverless SQL pool.\n\nYou execute the Transact-SQL query shown in the following exhibit.\n\nWhat do the query results include?",
+    "question_text": "You are performing exploratory analysis of the bus fare data in an Azure Data Lake Storage Gen2 account by using an Azure Synapse Analytics serverless SQL pool.\n\nYou execute the Transact-SQL query shown in the following exhibit.\n\nSELECT\n  payment_type,\n  SUM(fare amount) AS fare total\nFROM OPENROWSET (\n    BULK 'csv/busfare/tripdata 2020 *. csv',\n    DATA SOURCE = 'BusData',\n    FORMAT = 'CSV', PARSER VERSION = '2.0',\n    FIRSTROW = 2\n  )\n  WITH (\n    payment_type INT 10,\n    fare amount FLOAT 11\n  ) AS nyc\nGROUP BY payment_type\nORDER BY payment_type;\n\nWhat do the query results include?",
     "question_type": "single",
     "choices": [
       "Only CSV files in the tripdata_2020 subfolder.",
@@ -474,16 +529,18 @@
     ]
   },
   {
-    "question_text": "DRAG DROP -You use PySpark in Azure Databricks to parse the following JSON input.\n\nYou need to output the data in the following tabular format.\n\nHow should you complete the PySpark code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the spit bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_text": "DRAG DROP -You use PySpark in Azure Databricks to parse the following JSON input.\n\"persons\": [\n  {\"name\":\"Keith\",\n  \"age\":30,\n  \"dogs\": [\"Fido\", \"Fluffy\"]\n  },{\n  \"name\":\"Donna\",\n  \"age\":46,\n  \"dogs\": [\"Spot\"]}\n]\n\nYou need to output the data in the following tabular format.\n\nowner   age  dog\nKeith   30   Fido\nKeith   30   Fluffy\nDonna   46   Spot\n\nHow should you complete the PySpark code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the spit bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:\n\ndbutils.fs.put(\"/tmp/source.json\", source_json, True)\nsource_df = spark.read.option(\"multiline\", \"true\") .json(\"/tmp/source.json\")\npersons = source_df.XXX.XXX (\"persons\") .alias(\"persons\"))\npersons_dogs = persons.select(col(\"persons.name\").alias(\"owner\"), col(\"persons.age\").alias(\"age\"),\nexplode XXX (\"dog\"))\n(\"persons-dogs\").\ndisplay (persons_dogs)",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [ "alias","array_union","createDataFrame","explode","select","translate"
+    ],
+    "site_answers": ["select","explode","alias"
+    ]
   },
   {
-    "question_text": "HOTSPOT -You are designing an application that will store petabytes of medical imaging data.\n\nWhen the data is first created, the data will be accessed frequently during the first week. After one month, the data must be accessible within 30 seconds, but files will be accessed infrequently. After one year, the data will be accessed infrequently but must be accessible within five minutes.\n\nYou need to select a storage strategy for the data. The solution must minimize costs.\n\nWhich storage tier should you use for each time frame? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are designing an application that will store petabytes of medical imaging data.\n\nWhen the data is first created, the data will be accessed frequently during the first week. After one month, the data must be accessible within 30 seconds, but files will be accessed infrequently. After one year, the data will be accessed infrequently but must be accessible within five minutes.\n\nYou need to select a storage strategy for the data. The solution must minimize costs.\n\nWhich storage tier should you use for each time frame? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nFirst week: X\nAfter one month: Y\nAfter one year: Z",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["X Archive","X Cool","X Hot","Y Archive","Y Cool","Y Hot","Z Archive","Z Cool","Z Hot"],
+    "site_answers": ["X Hot","Y Cool","Z Cool"]
   },
   {
     "question_text": "You have an Azure Synapse Analytics Apache Spark pool named Pool1.\n\nYou plan to load JSON files from an Azure Data Lake Storage Gen2 container into the tables in Pool1. The structure and data types vary by file.\n\nYou need to load the files into the tables. The solution must maintain the source data types.\n\nWhat should you do?",
@@ -512,28 +569,26 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job that queries reference data from a product catalog file. The file is updated daily.\n\nThe reference data input details for the file are shown in the Input exhibit. (Click the Input tab.)The storage account container view is shown in the Refdata exhibit. (Click the Refdata tab.)You need to configure the Stream Analytics job to pick up the new reference data.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job that queries reference data from a product catalog file. The file is updated daily.\n\nThe reference data input details for the file are shown in the Input exhibit. (Click the Input tab.)The storage account container view is shown in the Refdata exhibit. (Click the Refdata tab.)\n\nproducts\ncontainer: refdata\npath pattern: product.csv\nDate format YYYY/MM/DD\nTime format: HH\nCSV, Comma, UTF-8\n\ncontainer refdata\nrefdata/2020-03-20/product.csv\n\nYou need to configure the Stream Analytics job to pick up the new reference data.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nPath pattern: X\nDate format: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
-  },
-  {
-    "question_text": "HOTSPOT -You have the following Azure Stream Analytics query.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
-    "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X {date}/product.csv", "X {date}/{time}/product.csv", "X product.csv", "X */product.csv",
+      "Y MM/DD/YYY", "Y YYYY/MM/DD", "Y YYYY-DD-MM","Y YYYY-MM-DD"
+    ],
+    "site_answers": ["X {date}/product.csv","Y YYYY-MM-DD"]
   },
   {
     "question_text": "HOTSPOT -You are building a database in an Azure Synapse Analytics serverless SQL pool.\n\nYou have data stored in Parquet files in an Azure Data Lake Storege Gen2 container.\n\nRecords are structured as shown in the following sample.{\"id\": 123,\"address_housenumber\": \"19c\",\"address_line\": \"Memory Lane\",\"applicant1_name\": \"Jane\",\"applicant2_name\": \"Dev\"}The records contain two applicants at most.\n\nYou need to build a table that includes only the address fields.\n\nHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["CREATE EXTERNAL TABLE","CREATE TABLE","CREATE VIEW", "CROSS APPLY", "OPENJSON","OPENROWSET (BULK http link)"],
+    "site_answers": ["CREATE EXTERNAL TABLE","OPENROWSET (BULK http link)"]
   },
   {
     "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool named Pool1 and an Azure Data Lake Storage Gen2 account named Account1.\n\nYou plan to access the files in Account1 by using an external table.\n\nYou need to create a data source in Pool1 that you can reference when you create the external table.\n\nHow should you complete the Transact-SQL statement? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["blob","dfs","table","PUSHDOWN = ON", "TYPE = BLOB_STORAGE","TYPE = HADOOP"],
+    "site_answers": ["blob","TYPE = HADOOP"]
+    "link":"https://learn.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-external-tables"
   },
   {
     "question_text": "You have an Azure subscription that contains an Azure Blob Storage account named storage1 and an Azure Synapse Analytics dedicated SQL pool namedPool1.\n\nYou need to store data in storage1. The data will be read by Pool1. The solution must meet the following requirements:Enable Pool1 to skip columns and rows that are unnecessary in a query.\u2711 Automatically create column statistics.\u2711 Minimize the size of files.\n\nWhich type of file should you use?",
@@ -549,40 +604,44 @@
     ]
   },
   {
-    "question_text": "DRAG DROP -You plan to create a table in an Azure Synapse Analytics dedicated SQL pool.\n\nData in the table will be retained for five years. Once a year, data that is older than five years will be deleted.\n\nYou need to ensure that the data is distributed evenly across partitions. The solution must minimize the amount of time required to delete old data.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_text": "DRAG DROP -You plan to create a table in an Azure Synapse Analytics dedicated SQL pool.\n\nData in the table will be retained for five years. Once a year, data that is older than five years will be deleted.\n\nYou need to ensure that the data is distributed evenly across partitions. The solution must minimize the amount of time required to delete old data.\n\nHow should you complete the Transact-SQL statement? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:\nDistriubtion: XXX\nPartition: YYY",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["CustomerKey","HASH","ROUND_ROBIN","REPLICATE","OrderDateKey","SalesOrderNumber"],
+    "site_answers": ["HASH","OrderDateKey"]
   },
   {
-    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 service.\n\nYou need to design a data archiving solution that meets the following requirements:\u2711 Data that is older than five years is accessed infrequently but must be available within one second when requested.\u2711 Data that is older than seven years is NOT accessed.\u2711 Costs must be minimized while maintaining the required availability.\n\nHow should you manage the data? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 service.\n\nYou need to design a data archiving solution that meets the following requirements:\u2711 Data that is older than five years is accessed infrequently but must be available within one second when requested.\u2711 Data that is older than seven years is NOT accessed.\u2711 Costs must be minimized while maintaining the required availability.\n\nHow should you manage the data? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nData > 5yo: X\nData > 7yo: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["X Delete the blob.","X Move to archive storage.","X Move to cool storage.","X Move to hot storage.","Y Delete the blob.","Y Move to archive storage.","Y Move to cool storage.","Y Move to hot storage."],],
+    "site_answers": ["X Move to cool storage.","Y Move to archive storage."]
   },
   {
-    "question_text": "HOTSPOT -You plan to create an Azure Data Lake Storage Gen2 account.\n\nYou need to recommend a storage solution that meets the following requirements:\u2711 Provides the highest degree of data resiliency\u2711 Ensures that content remains available for writes if a primary data center failsWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You plan to create an Azure Data Lake Storage Gen2 account.\n\nYou need to recommend a storage solution that meets the following requirements:\u2711 Provides the highest degree of data resiliency\u2711 Ensures that content remains available for writes if a primary data center failsWhat should you include in the recommendation? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nReplication mechanism: X\nFailover process: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X Change feed","X Zone-redundant storage (ZRS)","X Read-access geo-redundant storage (RA-GRS)","X Read-access geo-zone-redundant storage (RA-GRS)",
+      "Y Failover initiated by Microsoft","Y Failover manually initiated by the customer","Y Failover automatically initiated by an Azure Automation job"
+    ],
+    "site_answers": ["X Read-access geo-zone-redundant storage (RA-GRS)",,"Y Failover manually initiated by the customer"]
   },
   {
     "question_text": "You need to implement a Type 3 slowly changing dimension (SCD) for product category data in an Azure Synapse Analytics dedicated SQL pool.\n\nYou have a table that was created by using the following Transact-SQL statement.\n\nWhich two columns should you add to the table? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.\n\nA.\n\nB.\n\nC.\n\nD.\n\nE.",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["CurrentProductCategory","OriginalProductCategory"],
+    "site_answers": ["CurrentProductCategory","OriginalProductCategory"]
   },
   {
-    "question_text": "DRAG DROP -You have an Azure subscription.\n\nYou plan to build a data warehouse in an Azure Synapse Analytics dedicated SQL pool named pool1 that will contain staging tables and a dimensional model.\n\nPool1 will contain the following tables.\n\nYou need to design the table storage for pool1. The solution must meet the following requirements:\u2711 Maximize the performance of data loading operations to Staging.\n\nWebSessions.\u2711 Minimize query times for reporting queries against the dimensional model.\n\nWhich type of table distribution should you use for each table? To answer, drag the appropriate table distribution types to the correct tables. Each table distribution type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_text": "DRAG DROP -You have an Azure subscription.\n\nYou plan to build a data warehouse in an Azure Synapse Analytics dedicated SQL pool named pool1 that will contain staging tables and a dimensional model.\n\nPool1 will contain the following tables.\n\nYou need to design the table storage for pool1. The solution must meet the following requirements:\u2711 Maximize the performance of data loading operations to Staging.\n\nWebSessions.\u2711 Minimize query times for reporting queries against the dimensional model.\n\nWhich type of table distribution should you use for each table? To answer, drag the appropriate table distribution types to the correct tables. Each table distribution type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:\nCommon.Data:\nMarketing.Web.Sessions:\nStaging.Web.Sessions:\n",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["X Hash","X Replicated","X round-Robin","Y Hash","Y Replicated","Y Round-robin","Z Hash","Z Replicated","Z Round-robin"],
+    "site_answers": ["X Replicated","Y Hash","Z Round-robin"]
   },
   {
-    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a table named FactInternetSales that will be a large fact table in a dimensional model. FactInternetSales will contain 100 million rows and two columns named SalesAmount and OrderQuantity. Queries executed on FactInternetSales will aggregate the values in SalesAmount and OrderQuantity from the last year for a specific product. The solution must minimize the data size and query execution time.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a table named FactInternetSales that will be a large fact table in a dimensional model. FactInternetSales will contain 100 million rows and two columns named SalesAmount and OrderQuantity. Queries executed on FactInternetSales will aggregate the values in SalesAmount and OrderQuantity from the last year for a specific product. The solution must minimize the data size and query execution time.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nWITH: X\n, DISTRIBUTION: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["(X CLUSTERED COLUMNSTORE INDEX","X (CLUSTERED INDEX ([OrderDateKey])","(X HEAP","(X INDEX on [ProductKey]",
+      "Y Hash([OrderDateKey])","Y Hash([ProductKey])","Y REPLICATE","ROUND_ROBIN"],
+    "site_answers": ["(X CLUSTERED COLUMNSTORE INDEX","Y Hash([ProductKey])"]
   },
   {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool that contains a table named Table1. Table1 contains the following:\u2711 One billion rows\u2711 A clustered columnstore index\u2711 A hash-distributed column named Product Key\u2711 A column named Sales Date that is of the date data type and cannot be nullThirty million rows will be added to Table1 each month.\n\nYou need to partition Table1 based on the Sales Date column. The solution must optimize query performance and data loading.\n\nHow often should you create a partition?",
@@ -658,12 +717,6 @@
     "site_answers": [
       "an IDENTITY column"
     ]
-  },
-  {
-    "question_text": "HOTSPOT -You have an Azure Data Lake Storage Gen2 account that contains a container named container1. You have an Azure Synapse Analytics serverless SQL pool that contains a native external table named dbo.\n\nTable1. The source data for dbo.\n\nTable1 is stored in container1. The folder structure of container1 is shown in the following exhibit.\n\nThe external data source is defined by using the following statement.\n\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\nNOTE: Each correct selection is worth one point.",
-    "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
   },
   {
     "question_text": "You have an Azure Synapse Analytics dedicated SQL pool.\n\nYou need to create a fact table named Table1 that will store sales data from the last three years. The solution must be optimized for the following query operations:\u2022\tShow order counts by week.\u2022\tCalculate sales totals by region.\u2022\tCalculate sales totals by product.\u2022\tFind all the orders from a given month.\n\nWhich data should you use to partition Table1?",
