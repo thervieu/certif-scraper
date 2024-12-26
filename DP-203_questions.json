@@ -1437,28 +1437,48 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You configure version control for an Azure Data Factory instance as shown in the following exhibit.\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You configure version control for an Azure Data Factory instance as shown in the following exhibit.\n\ngit repo\nrepo_name: dwh_batchetl\ncollab branch: main\npublish_branch: adf_publish\nroo folder: /\n\nUse the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nARM templates for the pipeline assets are stored in X.\nA Data Factory ARM template named contososales can be found in Y.",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X /","X adf_publish","X main","X Parameterization template",
+      "Y /","Y /contososales","Y /dwh_batchetl/adf_publish/contososales","Y /main"
+    ],
+    "site_answers": [
+      "X adf_publish","Y /dwh_batchetl/adf_publish/contososales"
+    ]
   },
   {
-    "question_text": "HOTSPOT -You are designing an Azure Stream Analytics solution that receives instant messaging data from an Azure Event Hub.\n\nYou need to ensure that the output from the Stream Analytics job counts the number of messages per time zone every 15 seconds.\n\nHow should you complete the Stream Analytics query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are designing an Azure Stream Analytics solution that receives instant messaging data from an Azure Event Hub.\n\nYou need to ensure that the output from the Stream Analytics job counts the number of messages per time zone every 15 seconds.\n\nHow should you complete the Stream Analytics query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nSelect TimeZone, count (*) AS MessageCount\nFROM MessageStream XXX CreatedAt\nGROUP BY TimeZone, YYY (second, 15)",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X LAST","X OVER","X SYSTEM.TIMESTAMP()","X TIMESTAMP BY",
+      "Y HOPPINGWINDOW","Y SESSIONWINDOW","Y SLIDINGWINDOW","Y TUMBLINGWINDOW"
+    ],
+    "site_answers": [
+      "X TIMESTAMP BY","Y TUMBLINGWINDOW"
+    ]
   },
   {
     "question_text": "HOTSPOT -You have an Azure Data Factory instance named ADF1 and two Azure Synapse Analytics workspaces named WS1 and WS2.\n\nADF1 contains the following pipelines:\u2711 P1: Uses a copy activity to copy data from a nonpartitioned table in a dedicated SQL pool of WS1 to an Azure Data Lake Storage Gen2 account\u2711 P2: Uses a copy activity to copy data from text-delimited files in an Azure Data Lake Storage Gen2 account to a nonpartitioned table in a dedicated SQL pool of WS2You need to configure P1 and P2 to maximize parallelism and performance.\n\nWhich dataset settings should you configure for the copy activity if each pipeline? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "P1: Set the Copy method to Bulk insert","P1: Set the Copy method to PolyBase","P1: Set the Isolation level to Repeatable read","P1: Set the Partition option to Dynamic range",
+      "P2: Set the Copy method to Bulk insert","P2: Set the Copy method to PolyBase","P2: Set the Isolation level to Repeatable read","P2: Set the Partition option to Dynamic range"
+    ],
+    "site_answers": [
+      "P1: Set the Partition option to Dynamic range","P1: Set the Copy method to PolyBase"
+    ]
   },
   {
     "question_text": "HOTSPOT -You have an Azure Storage account that generates 200,000 new files daily. The file names have a format of {YYYY}/{MM}/{DD}/{HH}/{CustomerID}.csv.\n\nYou need to design an Azure Data Factory solution that will load new data from the storage account to an Azure Data Lake once hourly. The solution must minimize load times and costs.\n\nHow should you configure the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X: Full Load","X: Incremental Load","X: Load individual files as they arrive",
+      "Y: Fixed schedule","Y New file","Y Tumbling window"
+    ],
+    "site_answers": [
+      "X: Incremental Load","Y Tumbling window"
+    ]
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou plan to create an Azure Databricks workspace that has a tiered structure. The workspace will contain the following three workloads:\u2711 A workload for data engineers who will use Python and SQL.\u2711 A workload for jobs that will run notebooks that use Python, Scala, and SQL.\u2711 A workload that data scientists will use to perform ad hoc analysis in Scala and R.\n\nThe enterprise architecture team at your company identifies the following standards for Databricks environments:\u2711 The data engineers must share a cluster.\u2711 The job cluster will be managed by using a request process whereby data scientists and data engineers provide packaged notebooks for deployment to the cluster.\u2711 All the data scientists must be assigned their own cluster that terminates automatically after 120 minutes of inactivity. Currently, there are three data scientists.\n\nYou need to create the Databricks clusters for the workloads.\n\nSolution: You create a Standard cluster for each data scientist, a Standard cluster for the data engineers, and a High Concurrency cluster for the jobs.\n\nDoes this meet the goal?",
@@ -1487,8 +1507,10 @@
   {
     "question_text": "DRAG DROP -You are responsible for providing access to an Azure Data Lake Storage Gen2 account.\n\nYour user account has contributor access to the storage account, and you have the application ID and access key.\n\nYou plan to use PolyBase to load data into an enterprise data warehouse in Azure Synapse Analytics.\n\nYou need to configure PolyBase to connect the data warehouse to storage account.\n\nWhich three components should you create in sequence? To answer, move the appropriate components from the list of components to the answer area and arrange them in the correct order.\n\nSelect and Place:",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": ["a database scoped credential","an asymmetric key","an external data source","a database encryption key","an external file format"],
+    "site_answers": [
+      "an asymmetric key","a database scoped credential","an external data source"
+    ]
   },
   {
     "question_text": "You are monitoring an Azure Stream Analytics job by using metrics in Azure.\n\nYou discover that during the last 12 hours, the average watermark delay is consistently greater than the configured late arrival tolerance.\n\nWhat is a possible cause of this behavior?",
@@ -1504,10 +1526,15 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job to retrieve game data.\n\nYou need to ensure that the job returns the highest scoring record for each five-minute time interval of each game.\n\nHow should you complete the Stream Analytics query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are building an Azure Stream Analytics job to retrieve game data.\n\nYou need to ensure that the job returns the highest scoring record for each five-minute time interval of each game.\n\nHow should you complete the Stream Analytics query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nSELECT XXXas HighestScore\nFROM input TIMESTAMP BY CreatedAt\nGROUP BY YYY",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X: Collect(Score)","X: CollectTop(1) OVER(ORDER BY Score Desc)","X: Game, MAX(Score)","X: TopOne() OVER(PARTITION BY Game ORDER BY Score Desc)",
+      "Y: Game","Y: Hopping(minute,5)","Y: Tumbling(minute,5)","Y: Windows(TumblingWindow(minute,5),Hopping(minute,5))"
+    ],
+    "site_answers": [
+      "X: TopOne() OVER(PARTITION BY Game ORDER BY Score Desc)","Y: Tumbling(minute,5)"
+    ]
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou have an Azure Data Lake Storage account that contains a staging zone.\n\nYou need to design a daily process to ingest incremental data from the staging zone, transform the data by executing an R script, and then insert the transformed data into a data warehouse in Azure Synapse Analytics.\n\nSolution: You use an Azure Data Factory schedule trigger to execute a pipeline that copies the data to a staging table in the data warehouse, and then uses a stored procedure to execute the R script.\n\nDoes this meet the goal?",
@@ -1545,22 +1572,28 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You are building an Azure Data Factory solution to process data received from Azure Event Hubs, and then ingested into an Azure Data Lake Storage Gen2 container.\n\nThe data will be ingested every five minutes from devices into JSON files. The files have the following naming pattern./{deviceType}/in/{YYYY}/{MM}/{DD}/{HH}/{deviceID}_{YYYY}{MM}{DD}HH}{mm}.jsonYou need to prepare the data for batch data processing so that there is one dataset per hour per deviceType. The solution must minimize read times.\n\nHow should you configure the sink for the copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are building an Azure Data Factory solution to process data received from Azure Event Hubs, and then ingested into an Azure Data Lake Storage Gen2 container.\n\nThe data will be ingested every five minutes from devices into JSON files. The files have the following naming pattern./{deviceType}/in/{YYYY}/{MM}/{DD}/{HH}/{deviceID}_{YYYY}{MM}{DD}HH}{mm}.jsonYou need to prepare the data for batch data processing so that there is one dataset per hour per deviceType. The solution must minimize read times.\n\nHow should you configure the sink for the copy activity? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nParameter: X\nNaming pattern: Y\nCopy behaviour: Z\n",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X: @pipeline(),TriggerTime","X: @pipeline(),TriggerType","X: @trigger().outputs.windowStartTime","X: @trigger().startTime",
+      "Y: /{deviceID}/out/{YYYY}/{MM}/{DD}/{HH}.json","Y: /{YYYY}/{MM}/{DD}/{deviceType}.json","Y: /{YYYY}/{MM}/{DD}/{HH}.json","Y: /{YYYY}/{MM}/{DD}/{HH}_{deviceType}.json",
+      "Z: Add dynamic content","Z: Flatten hierarchy","Z: Merge files"
+    ],
+    "site_answers": [
+      "X: @trigger().startTime","Y: /{YYYY}/{MM}/{DD}/{HH}_{deviceType}.json","Z: Merge files"
+    ]
   },
   {
-    "question_text": "DRAG DROP -You are designing an Azure Data Lake Storage Gen2 structure for telemetry data from 25 million devices distributed across seven key geographical regions. Each minute, the devices will send a JSON payload of metrics to Azure Event Hubs.\n\nYou need to recommend a folder structure for the data. The solution must meet the following requirements:\u2711 Data engineers from each region must be able to build their own pipelines for the data of their respective region only.\u2711 The data must be processed at least once every 15 minutes for inclusion in Azure Synapse Analytics serverless SQL pools.\n\nHow should you recommend completing the structure? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:",
+    "question_text": "DRAG DROP -You are designing an Azure Data Lake Storage Gen2 structure for telemetry data from 25 million devices distributed across seven key geographical regions. Each minute, the devices will send a JSON payload of metrics to Azure Event Hubs.\n\nYou need to recommend a folder structure for the data. The solution must meet the following requirements:\u2711 Data engineers from each region must be able to build their own pipelines for the data of their respective region only.\u2711 The data must be processed at least once every 15 minutes for inclusion in Azure Synapse Analytics serverless SQL pools.\n\nHow should you recommend completing the structure? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:\n/A/B/C.json",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
-  },
-  {
-    "question_text": "HOTSPOT -You are implementing an Azure Stream Analytics solution to process event data from devices.\n\nThe devices output events when there is a fault and emit a repeat of the event every five seconds until the fault is resolved. The devices output a heartbeat event every five seconds after a previous event if there are no faults present.\n\nA sample of the events is shown in the following table.\n\nYou need to calculate the uptime between the faults.\n\nHow should you complete the Stream Analytics SQL query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
-    "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "{deviceID}","{mm}/{HH}/{DD}/{MM}/{YYYY]","{regionID}/{deviceID]",
+      "{regionID}/raw","{YYYY] /{MM}/{DD}/{HH}","{YYYY]/{MM}/{DD}/{HH}/{mm}",
+      "raw/{deviceID}","raw/{regionID}"
+    ],
+    "site_answers": [
+      "raw/{regionID}","{YYYY]/{MM}/{DD}/{HH}/{mm}","{deviceID}"
+    ]
   },
   {
     "question_text": "You are creating a new notebook in Azure Databricks that will support R as the primary language but will also support Scala and SQL.\n\nWhich switch should you use to switch between languages?",
@@ -1740,7 +1773,8 @@
     ],
     "site_answers": [
       "On the master database, execute a query against the sys.dm_pdw_nodes_os_performance_counters dynamic management view."
-    ]
+    ],
+    "link": "https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-monitor"
   },
   {
     "question_text": "You are designing an anomaly detection solution for streaming data from an Azure IoT hub. The solution must meet the following requirements:\u2711 Send the output to Azure Synapse.\u2711 Identify spikes and dips in time series data.\u2711 Minimize development and configuration effort.\n\nWhich should you include in the solution?",
@@ -1768,10 +1802,13 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You are designing an enterprise data warehouse in Azure Synapse Analytics that will store website traffic analytics in a star schema.\n\nYou plan to have a fact table for website visits. The table will be approximately 5 GB.\n\nYou need to recommend which distribution type and index type to use for the table. The solution must provide the fastest query performance.\n\nWhat should you recommend? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
+    "question_text": "HOTSPOT -You are designing an enterprise data warehouse in Azure Synapse Analytics that will store website traffic analytics in a star schema.\n\nYou plan to have a fact table for website visits. The table will be approximately 5 GB.\n\nYou need to recommend which distribution type and index type to use for the table. The solution must provide the fastest query performance.\n\nWhat should you recommend? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nDistribution: X\nIndex: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X: Hash","X: Round robin","X: Replicated",
+      "Y: Clustered columnstore","Y: Clustered","Y: Nonclustered"
+    ],
+    "site_answers": ["X: Hash","Y: Clustered columnstore"]
   },
   {
     "question_text": "You have an Azure Stream Analytics job.\n\nYou need to ensure that the job has enough streaming units provisioned.\n\nYou configure monitoring of the SU % Utilization metric.\n\nWhich two additional metrics should you monitor? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
@@ -1828,12 +1865,6 @@
     ]
   },
   {
-    "question_text": "DRAG DROP -You have an Azure Data Lake Storage Gen2 account that contains a JSON file for customers. The file contains two attributes named FirstName and LastName.\n\nYou need to copy the data from the JSON file to an Azure Synapse Analytics table by using Azure Databricks. A new column must be created that concatenates the FirstName and LastName values.\n\nYou create the following components:\u2711 A destination table in Azure Synapse\u2711 An Azure Blob storage container\u2711 A service principalIn which order should you perform the actions? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nSelect and Place:",
-    "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
-  },
-  {
     "question_text": "You have an Azure data factory named ADF1.\n\nYou currently publish all pipeline authoring changes directly to ADF1.\n\nYou need to implement version control for the changes made to pipeline artifacts. The solution must ensure that you can apply version control to the resources currently defined in the UX Authoring canvas for ADF1.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -1850,16 +1881,15 @@
     ]
   },
   {
-    "question_text": "DRAG DROP -You have an Azure subscription that contains an Azure Synapse Analytics workspace named workspace1. Workspace1 connects to an Azure DevOps repository named repo1. Repo1 contains a collaboration branch named main and a development branch named branch1. Branch1 contains an Azure Synapse pipeline named pipeline1.\n\nIn workspace1, you complete testing of pipeline1.\n\nYou need to schedule pipeline1 to run daily at 6 AM.\n\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n\nNOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.\n\nSelect and Place:",
+    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named Pool1 and an Azure Data Lake Storage account named storage1. Storage1 requires secure transfers.\n\nYou need to create an external data source in Pool1 that will be used to read .orc files in storage1.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\nCREATE EXTERNAL DATA SOURCE AzureDataLakeStore\nWITH\n( Location1 '$XXX$://data@newyorktaxidataset.dfs.core.windows.net' ,\ncredential = ADLS_credential ,\nTYPE - $YYY$ );",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
-  },
-  {
-    "question_text": "HOTSPOT -You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named Pool1 and an Azure Data Lake Storage account named storage1. Storage1 requires secure transfers.\n\nYou need to create an external data source in Pool1 that will be used to read .orc files in storage1.\n\nHow should you complete the code? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:",
-    "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X: abfs","X: abfss","X: wasb","X: wasbs",
+      "Y: BLOB_STORAGE","Y: HADOOP","Y: RDBMS","Y: SHARP MAP MANAGER"
+    ],
+    "site_answers": [
+      "X: abfs","Y: HADOOP"
+    ]
   },
   {
     "question_text": "You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named SQLPool1.\n\nSQLPool1 is currently paused.\n\nYou need to restore the current state of SQLPool1 to a new SQL pool.\n\nWhat should you do first?",
@@ -1929,10 +1959,15 @@
     ]
   },
   {
-    "question_text": "HOTSPOT -You have an Azure Synapse Analytics pipeline named Pipeline1 that contains a data flow activity named Dataflow1.\n\nPipeline1 retrieves files from an Azure Data Lake Storage Gen 2 account named storage1.\n\nDataflow1 uses the AutoResolveIntegrationRuntime integration runtime configured with a core count of 128.\n\nYou need to optimize the number of cores used by Dataflow1 to accommodate the size of the files in storage1.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nHot Area:",
+    "question_text": "HOTSPOT -You have an Azure Synapse Analytics pipeline named Pipeline1 that contains a data flow activity named Dataflow1.\n\nPipeline1 retrieves files from an Azure Data Lake Storage Gen 2 account named storage1.\n\nDataflow1 uses the AutoResolveIntegrationRuntime integration runtime configured with a core count of 128.\n\nYou need to optimize the number of cores used by Dataflow1 to accommodate the size of the files in storage1.\n\nWhat should you configure? To answer, select the appropriate options in the answer area.\n\nHot Area:\nAdd to Pipeline1:X\nFor Dataflow1, set the core count by using: Y",
     "question_type": "multiple",
-    "choices": [],
-    "site_answers": []
+    "choices": [
+      "X: A custom activity","X: A Get Metadata activity","X: An If Condition activity",
+      "Y: Dynamic content","Y: Parameters","Y: User properties"
+    ],
+    "site_answers": [
+      "X: A Get Metadata activity","Y: Dynamic content"
+    ]
   },
   {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou plan to create an Azure Databricks workspace that has a tiered structure. The workspace will contain the following three workloads:\u2711 A workload for data engineers who will use Python and SQL.\u2711 A workload for jobs that will run notebooks that use Python, Scala, and SQL.\u2711 A workload that data scientists will use to perform ad hoc analysis in Scala and R.\n\nThe enterprise architecture team at your company identifies the following standards for Databricks environments:\u2711 The data engineers must share a cluster.\u2711 The job cluster will be managed by using a request process whereby data scientists and data engineers provide packaged notebooks for deployment to the cluster.\u2711 All the data scientists must be assigned their own cluster that terminates automatically after 120 minutes of inactivity. Currently, there are three data scientists.\n\nYou need to create the Databricks clusters for the workloads.\n\nSolution: You create a Standard cluster for each data scientist, a High Concurrency cluster for the data engineers, and a Standard cluster for the jobs.\n\nDoes this meet the goal?",
@@ -1970,7 +2005,7 @@
     ]
   },
   {
-    "question_text": "You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named Pool1. Pool1 receives new data once every 24 hours.\n\nYou have the following function.\n\nYou have the following query.\n\nThe query is executed once every 15 minutes and the @parameter value is set to the current date.\n\nYou need to minimize the time it takes for the query to return results.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
+    "question_text": "You have an Azure subscription that contains an Azure Synapse Analytics dedicated SQL pool named Pool1. Pool1 receives new data once every 24 hours.\n\nYou have the following function.\n\ncreate function dbo.udfFtoC(F decimal)\nreturn decimal\nas\nbegin\nreturn (F - 32) * 5.0 / 9\nend\n\nYou have the following query.\n\nselect avg_date, sensorid, avg_f, dbo.udfFtoC(avg_temperature) as avg_c from SensorTemps\nwhere avg_date = @parameter\n\nThe query is executed once every 15 minutes and the @parameter value is set to the current date.\n\nYou need to minimize the time it takes for the query to return results.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
       "Create an index on the avg_f column.",
