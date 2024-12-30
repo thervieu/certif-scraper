@@ -1269,6 +1269,17 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an enterprise data warehouse in Azure Synapse Analytics that contains a table named FactOnlineSales. The table contains data from the start of 2009 to the end of 2012.\n\nYou need to improve the performance of queries against FactOnlineSales by using table partitions. The solution must meet the following requirements:\u2711 Create four partitions based on the order date.\u2711 Ensure that each partition contains all the orders placed during a given calendar year.\n\nHow should you complete the T-SQL command? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\n\nCREATE TABLE [dbo] . FactOnlineSales ([...])\nWITH (CLUSTERED COLUMNSTORE INDEX)\nPARTITION ([OrderDateKey] RANGE XXX FOR VALUES\n(YYY))",
+    "question_type": "multiple",
+    "choices": [
+      "X: LEFT","X: RIGHT",
+      "Y: 20090101,20121231","X: 20100101,20110101,20120101","X: 20090101,20100101,20110101,20120101"
+    ],
+    "site_answers": [
+      "X: RIGHT","Y: 20100101,20110101,20120101"
+    ]
+  },
+  {
     "question_text": "You need to implement a Type 3 slowly changing dimension (SCD) for product category data in an Azure Synapse Analytics dedicated SQL pool.\n\nYou have a table that was created by using the following Transact-SQL statement.\n\nWhich two columns should you add to the table? Each correct answer presents part of the solution.\n\nNOTE: Each correct selection is worth one point.",
     "question_type": "multiple",
     "choices": [
@@ -1295,6 +1306,17 @@
     ]
   },
   {
+    "question_text": "DRAG DROP -You need to create an Azure Data Factory pipeline to process data for the following three departments at your company: Ecommerce, retail, and wholesale. The solution must ensure that data can also be processed for the entire company.\n\nHow should you complete the Data Factory data flow script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\n\nNOTE: Each correct selection is worth one point.\n\nSelect and Place:\n\nCleanData\n  split(\n      XXX\n      YYY\n  ) ~> SplitByDept@(ZZZ)",
+    "question_type": "multiple",
+    "choices": [
+      "all, ecommerce, retail, wholesale","dept == 'ecommerce', dept == 'retail', dept == 'wholesale'",
+      "dept == 'ecommerce', dept == 'wholesale', dept == 'retail'",
+      "disjoint: false","disjoint: true","ecommerce, retail, wholesale, all"],
+    "site_answers": [
+      "dept == 'ecommerce', dept == 'retail', dept == 'wholesale'","disjoint: true","ecommerce, retail, wholesale, all"
+    ]
+  },
+  {
     "question_text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.\n\nAfter you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.\n\nYou are designing an Azure Stream Analytics solution that will analyze Twitter data.\n\nYou need to count the tweets in each 10-second window. The solution must ensure that each tweet is counted only once.\n\nSolution: You use a hopping window that uses a hop size of 5 seconds and a window size 10 seconds.\n\nDoes this meet the goal?",
     "question_type": "single",
     "choices": [
@@ -1303,6 +1325,18 @@
     ],
     "site_answers": [
       "No"
+    ]
+  },
+  {
+    "question_text": "HOTSPOT -You are designing a near real-time dashboard solution that will visualize streaming data from remote sensors that connect to the internet. The streaming data must be aggregated to show the average value of each 10-second interval. The data will be discarded after being displayed in the dashboard.\n\nThe solution will use Azure Stream Analytics and must meet the following requirements:\u2711 Minimize latency from an Azure Event hub to the dashboard.\u2711 Minimize the required storage.\u2711 Minimize development effort.\n\nWhat should you include in the solution? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one pointHot Area:\n\nAzure Stream Analytics input type:X\nAzure Stream Analytics output type: Y\nAggregation query location: Z",
+    "question_type": "multiple",
+    "choices": [
+      "X: Azure Event Hub","X: Azure SQL Database","X: Azure Stream Analytics","X: Microsoft Power BI",
+      "Y: Azure Event Hub","Y: Azure SQL Database","Y: Azure Stream Analytics","Y: Microsoft Power BI",
+      "Z: Azure Event Hub","Z: Azure SQL Database","Z: Azure Stream Analytics","Z: Microsoft Power BI"
+    ],
+    "site_answers": [
+      "X: Azure Event Hub","Y: Microsoft Power BI","Z: Azure Stream Analytics"
     ]
   },
   {
@@ -1320,6 +1354,18 @@
     ]
   },
   {
+    "question_text": "HOTSPOT -You have an Azure SQL database named Database1 and two Azure event hubs named HubA and HubB. The data consumed from each source is shown in the following table.\n\nYou need to implement Azure Stream Analytics to calculate the average fare per mile by driver.\n\nHow should you configure the Stream Analytics input for each source? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\n\nHubA: X\nHubB: Y\nDatabase1: Z\n",
+    "question_type": "multiple",
+    "choices": [
+      "X: Stream","X: Reference",
+      "Y: Stream","Y: Reference",
+      "Z: Stream","Z: Reference"
+    ],
+    "site_answers": [
+      "X: Stream","Y: Stream","Z: Reference"
+    ]
+  },
+  {
     "question_text": "You have an Azure Storage account and a data warehouse in Azure Synapse Analytics in the UK South region.\n\nYou need to copy blob data from the storage account to the data warehouse by using Azure Data Factory. The solution must meet the following requirements:\u2711 Ensure that the data remains in the UK South region at all times.\u2711 Minimize administrative effort.\n\nWhich type of integration runtime should you use?",
     "question_type": "single",
     "choices": [
@@ -1329,6 +1375,17 @@
     ],
     "site_answers": [
       "Azure integration runtime"
+    ]
+  },
+  {
+    "question_text": "HOTSPOT -You are building an Azure Analytics query that will receive input data from Azure IoT Hub and write the results to Azure Blob storage.\n\nYou need to calculate the difference in the number of readings per sensor per hour.\n\nHow should you complete the query? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\n\nSELECT sensorId,\n  growth = reading -\n    XXX (reading) OVER (PARTITION BY sensorId YYY (hour,1))\nFROM input",
+    "question_type": "multiple",
+    "choices": [
+      "X: LAG","X: LAST","X: LEAD",
+      "Y: LIMIT DURATION","Y: OFFSET","Y: WHEN"
+    ],
+    "site_answers": [
+      "X: LAG","Y: LIMIT DURATION"
     ]
   },
   {
@@ -1407,6 +1464,17 @@
     ],
     "site_answers": [
       "Partition by DateTime fields."
+    ]
+  },
+  {
+    "question_text": "HOTSPOT -You have a self-hosted integration runtime in Azure Data Factory.\n\nThe current status of the integration runtime has the following configurations:\u2711 Status: Running\u2711 Type: Self-Hosted\u2711 Version: 4.4.7292.1\u2711 Running / Registered Node(s): 1/1\u2711 High Availability Enabled: False\u2711 Linked Count: 0\u2711 Queue Length: 0\u2711 Average Queue Duration. 0.00sThe integration runtime has the following node details:\u2711 Name: X-M\u2711 Status: Running\u2711 Version: 4.4.7292.1\u2711 Available Memory: 7697MB\u2711 CPU Utilization: 6%\u2711 Network (In/Out): 1.21KBps/0.83KBps\u2711 Concurrent Jobs (Running/Limit): 2/14\u2711 Role: Dispatcher/Worker\u2711 Credential Status: In SyncUse the drop-down menus to select the answer choice that completes each statement based on the information presented.\n\nNOTE: Each correct selection is worth one point.\n\nHot Area:\n\nIf the X-M node becomes unavailable, all executed pipelines will: X\n\nThe number of concurrent jobs and the CPU usage indicate that the Concurrent Jobs (Running/Limit) value should be: Y",
+    "question_type": "multiple",
+    "choices": [
+      "X: fail until the node comes back online","X: switch to another integration runtime","X: exceed the CPU limit",
+      "Y: raised","Y: lowered","Y: left as is"
+    ],
+    "site_answers": [
+      "X: fail until the node comes back online","Y: lowered"
     ]
   },
   {
